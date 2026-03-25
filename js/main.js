@@ -8,6 +8,41 @@ if (navToggle && navLinks) {
   });
 }
 
+function closeAllNavDropdowns() {
+  document.querySelectorAll(".nav-dropdown").forEach((dd) => {
+    dd.classList.remove("open");
+    const btn = dd.querySelector(".nav-dropdown-toggle");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  });
+}
+
+document.querySelectorAll(".nav-dropdown-toggle").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const wrap = btn.closest(".nav-dropdown");
+    if (!wrap) return;
+    const willOpen = !wrap.classList.contains("open");
+    closeAllNavDropdowns();
+    if (willOpen) {
+      wrap.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+  });
+});
+
+document.addEventListener("click", () => {
+  closeAllNavDropdowns();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeAllNavDropdowns();
+});
+
+document.querySelectorAll(".nav-dropdown-menu").forEach((menu) => {
+  menu.addEventListener("click", (e) => e.stopPropagation());
+});
+
 document.querySelectorAll(".faq-question").forEach((button) => {
   button.addEventListener("click", () => {
     const item = button.parentElement;
