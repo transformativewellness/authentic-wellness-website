@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works â Authentic Wellness</title>
+  <meta name="description" content="Four simple steps: virtual consult, physician prescribes, ships to your door, results. Start your physician-prescribed program today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Qualiphy Quidget Part 1 â stylesheet -->
+  <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Authentic <span>Wellness</span></a>
+      <div class="nav-links">
+        <a href="programs.html">Programs</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="#start" class="btn btn-primary" style="padding:0.625rem 1.5rem;font-size:0.85rem;">Start My Program</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>How It Works</h1>
+      <p>Four simple steps from consultation to results. The entire process is virtual â no office visits, no waiting rooms.</p>
+    </div>
+  </section>
+
+  <!-- Steps Detail -->
+  <section class="section-linen">
+    <div class="container">
+      <div class="step-detail">
+
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Complete Your Virtual Consultation</h3>
+            <p>Click "Start My Program" below to begin your 15-minute telehealth visit through our secure Qualiphy platform. A licensed physician reviews your health history, current medications, and goals â all from your phone or computer.</p>
+            <p>The consultation is available 7 days a week. No appointment scheduling needed â start when you're ready. Your physician will determine the right program and dosing protocol for your specific needs.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Your Physician Prescribes</h3>
+            <p>After reviewing your evaluation, your physician creates a personalized treatment plan. If approved, your prescription is sent directly to our licensed compounding pharmacy â PATH Peptides for peptide programs, or OptioRx for GLP-1 medications.</p>
+            <p>All prescriptions are patient-specific and overseen by Dr. Joshua Yang, MD, our Medical Director. If labwork is needed, your physician will order it during the consultation and guide you through next steps.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Ships Directly to Your Door</h3>
+            <p>Your pharmaceutical-grade medication ships directly from our licensed pharmacy to your home within 3 business days. Everything you need is included â medication, reconstitution supplies (for peptides), syringes, alcohol swabs, and detailed instructions.</p>
+            <p>All compounds are pharmaceutical-grade with FDA-registered active pharmaceutical ingredients, lyophilized for stability, and third-party tested. Certificates of Analysis (COAs) are available on request.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Results â With Ongoing Support</h3>
+            <p>Follow your personalized protocol and start seeing results. Most patients notice improvements within 2â4 weeks â better sleep, improved energy, faster recovery, or weight loss depending on your program.</p>
+            <p>You'll receive check-ins at days 3, 7, 14, and 30. Our clinical team is available throughout your program for any questions. At day 80, you'll receive a renewal prompt to continue your progress seamlessly.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quidget CTA Section -->
+  <section class="quidget-cta" id="start">
+    <div class="container">
+      <h2>Start Your Program Now</h2>
+      <p>Your 15-minute virtual physician consultation is the first step. Available 7 days a week.</p>
+      <div id="main-qualiphy-widget" style="display:inline-block;">
+        <div
+          id="loadFormButton"
+          style="width:220px;height:48px;cursor:pointer;background-color:#2d4a3e;color:#fff;border:none;border-radius:6px;font-weight:600;display:flex;justify-content:center;align-items:center;font-family:'Inter',sans-serif;font-size:1rem;transition:background-color 0.3s;"
+          onmouseover="this.style.backgroundColor='#7a9e8e'"
+          onmouseout="this.style.backgroundColor='#2d4a3e'"
+          onclick="showDisclosureModal()">
+          Start My Program
+        </div>
+      </div>
+      <p style="display:none" id="not-available">Not available!</p>
+      <p style="margin-top:1.5rem;font-size:0.85rem;color:#4a5568;">Secure telehealth platform Â· Takes about 15 minutes Â· No appointment needed</p>
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="section-white">
+    <div class="container" style="max-width:720px;">
+      <h2 class="text-center">What to Expect</h2>
+      <div style="margin-top:2rem;">
+        <div class="faq-item" style="border-bottom:1px solid #e2e0dc;padding:1.25rem 0;">
+          <h4 style="color:#2d4a3e;margin-bottom:0.5rem;">Before your consultation</h4>
+          <p style="font-size:0.92rem;">Have a list of your current medications, any relevant medical conditions, and your health goals ready. The more your physician knows, the better your treatment plan will be.</p>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #e2e0dc;padding:1.25rem 0;">
+          <h4 style="color:#2d4a3e;margin-bottom:0.5rem;">During your consultation</h4>
+          <p style="font-size:0.92rem;">Your physician reviews your health history, discusses your goals, and recommends the best program. The visit takes about 15 minutes and happens entirely on your phone or computer through the secure Qualiphy platform.</p>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #e2e0dc;padding:1.25rem 0;">
+          <h4 style="color:#2d4a3e;margin-bottom:0.5rem;">After your consultation</h4>
+          <p style="font-size:0.92rem;">If approved, your prescription goes directly to the pharmacy. You'll receive a confirmation with tracking information. Your medication typically arrives within 3 business days, along with all supplies and instructions.</p>
+        </div>
+        <div class="faq-item" style="padding:1.25rem 0;">
+          <h4 style="color:#2d4a3e;margin-bottom:0.5rem;">Ongoing care</h4>
+          <p style="font-size:0.92rem;">We check in at days 3, 7, and 30. You can reach our clinical team anytime. At month 3, your renewal consultation ensures continued progress with adjusted dosing if needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Start?</h2>
+      <p>Your physician consultation is the only thing between you and optimized performance.</p>
+      <a href="#start" class="btn btn-amber" style="font-size:1.05rem;padding:1rem 2.5rem;">Start My Program â</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 style="font-family:'Playfair Display',serif;font-size:1.2rem;">Authentic Wellness</h4>
+          <p style="margin-top:0.5rem;">Physician-prescribed performance and longevity programs â backed by science, built for people who take their health seriously.</p>
+          <p style="margin-top:0.75rem;">info@authenticwellness.com</p>
+        </div>
+        <div>
+          <h4>Programs</h4>
+          <div class="footer-links">
+            <a href="programs.html">Perform â CJC-1295/Ipamorelin</a>
+            <a href="programs.html">Renew â Sermorelin</a>
+            <a href="programs.html">Longevity â NAD+</a>
+            <a href="programs.html#glp1">GLP-1 Weight Loss</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="how-it-works.html">How It Works</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Authentic Wellness â Evolving Wellness LLC. All rights reserved.</p>
+        <p>Medical Director: Joshua Yang M.D. Inc (Dr. Joshua Yang, MD) Â· CA License A167038 Â· NPI 1851549232</p>
+        <p>Physician-prescribed programs. Medications sourced from licensed 503A/503B compounding pharmacies.</p>
+        <p>Authentic Wellness is affiliated with <a href="https://transformativemedspa.com">Transformative Wellness</a> in Vista, CA.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Qualiphy Quidget Part 3 â before </body> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script id="qualiphy-script" type="text/javascript"
+    src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
+    data-formsrc='https://www.app.qualiphy.me/qualiphy-widget?clinic=Authentic Wellness&clinicId=6456&first_name=&last_name=&email=&phone_number=&gender=&exams=4194,4198,4199,4200,4202,4203,4204,4205,4207,2769,3702,2745,3703,4171,4172,4173,4174,1702,1008,1009,4106,4208,1904,1906,4226,1618,2488,2120,2316,2315,2129,1620,2121,2314,2130,1623,2248,4313,4334,2131,1690,2122,4314,4335,2565,2567,2755,2702,2861,2862,2863,2756,2864,2791,1900,3389,3388,4022,3538,116,2962,2247,3306,2075,3297,3298,3300,3299,3301,3302,3304,3305,3307,3308,3309,3310,3311,623,1486,1634,1808,1619,1621,1575,1640,3390,3990&tele_state_required=true&token=e97111808226681a2f307629007e908f0f719bd7'
+    data-timezone='-7'
+    data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'>
+  </script>
+</body>
+</html>
