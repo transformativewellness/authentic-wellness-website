@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="600" viewBox="0 0 1500 600" role="img" aria-labelledby="t">
+  <title id="t">Authentic Wellness  Notion cover</title>
+  <defs>
+    <linearGradient id="awg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d4a3e"/>
+      <stop offset="55%" style="stop-color:#243d33"/>
+      <stop offset="100%" style="stop-color:#1a2e26"/>
+    </linearGradient>
+    <linearGradient id="awaccent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7a9e8e;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#7a9e8e;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="600" fill="url(#awg)"/>
+  <rect width="1500" height="600" fill="url(#awaccent)"/>
+  <path d="M0 420 Q375 360 750 400 T1500 380 L1500 600 L0 600 Z" fill="#7a9e8e" opacity="0.12"/>
+  <text x="80" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#f8f6f2" letter-spacing="0.02em">Authentic Wellness</text>
+  <text x="80" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="500" fill="#c8d8d0" letter-spacing="0.04em">PHYSICIAN-PRESCRIBED PERFORMANCE · TELEHEALTH</text>
+  <rect x="80" y="380" width="120" height="4" rx="2" fill="#d4a853" opacity="0.95"/>
+  <text x="80" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#7a9e8e">Forest #2d4a3e · Sage #7a9e8e · Linen #f8f6f2</text>
+</svg>

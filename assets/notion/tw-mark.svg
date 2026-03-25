@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Transformative Wellness monogram</title>
+  <desc id="desc">TW monogram for Notion page icon  med spa brand block.</desc>
+  <rect width="128" height="128" rx="20" fill="#2a2422"/>
+  <text x="14" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" letter-spacing="0.5" fill="#f5f0eb">TW</text>
+  <path d="M16 94 C40 103, 86 103, 112 94" stroke="#c4a574" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+</svg>

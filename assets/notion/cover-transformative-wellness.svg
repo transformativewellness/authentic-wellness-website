@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="600" viewBox="0 0 1500 600" role="img" aria-labelledby="t">
+  <title id="t">Transformative Wellness  Notion cover</title>
+  <defs>
+    <linearGradient id="twg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a3230"/>
+      <stop offset="50%" style="stop-color:#2a2422"/>
+      <stop offset="100%" style="stop-color:#1a1614"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="600" fill="url(#twg)"/>
+  <rect x="0" y="0" width="8" height="600" fill="#c4a574"/>
+  <text x="80" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700" fill="#f5f0eb" letter-spacing="0.02em">Transformative Wellness</text>
+  <text x="80" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="500" fill="#c9bfb5" letter-spacing="0.06em">MED SPA · VISTA, CA</text>
+  <rect x="80" y="380" width="120" height="4" rx="2" fill="#c4a574"/>
+  <text x="80" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#8a7d72">Charcoal · Champagne · Rose gold accent</text>
+</svg>
