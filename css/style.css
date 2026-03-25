@@ -1,8 +1,8 @@
 /* ============================================
-   Authentic Wellness â Main Stylesheet
-   Brand: Deep Forest #2d4a3e Â· Sage Mist #7a9e8e Â· Clean Linen #f8f6f2
-   Fonts: Playfair Display (headings) Â· Inter (body)
-   Mobile-first Â· Clean Â· Premium Â· Conversion-focused
+   Authentic Wellness — Main Stylesheet
+   Brand: Deep Forest #2d4a3e · Sage Mist #7a9e8e · Clean Linen #f8f6f2
+   Fonts: Playfair Display (headings) · Inter (body)
+   Mobile-first · Clean · Premium · Conversion-focused
    ============================================ */
 
 /* --- Reset & Base --- */
@@ -14,6 +14,7 @@ body {
   background: #f8f6f2;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 4.5rem;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: #2d4a3e; text-decoration: none; transition: color 0.3s; }
@@ -22,7 +23,7 @@ ul, ol { list-style: none; }
 
 /* --- Typography --- */
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Serif Display', 'Playfair Display', serif;
   color: #2d4a3e;
   line-height: 1.25;
   font-weight: 700;
@@ -68,7 +69,8 @@ section { padding: 4rem 0; }
   border: 2px solid #2d4a3e;
 }
 .btn-outline:hover {
-  background: #2d4a3e;
+  background: #7a9e8e;
+  border-color: #7a9e8e;
   color: #fff;
 }
 .btn-amber {
@@ -76,8 +78,8 @@ section { padding: 4rem 0; }
   color: #1a202c;
 }
 .btn-amber:hover {
-  background: #c49a42;
-  color: #1a202c;
+  background: #7a9e8e;
+  color: #fff;
 }
 
 /* --- Navigation --- */
@@ -95,13 +97,13 @@ section { padding: 4rem 0; }
   align-items: center;
 }
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #2d4a3e;
-  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
 }
-.nav-logo span { color: #7a9e8e; }
+.nav-logo img {
+  height: 34px;
+  width: auto;
+}
 .nav-links {
   display: none;
   gap: 1.75rem;
@@ -113,8 +115,21 @@ section { padding: 4rem 0; }
   color: #4a5568;
   transition: color 0.3s;
 }
-.nav-links a:hover { color: #2d4a3e; }
+.nav-links a:hover { color: #7a9e8e; }
 .nav-links .btn { padding: 0.625rem 1.5rem; font-size: 0.85rem; }
+.nav-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+.nav-cta .cta-microcopy {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #4a5568;
+  text-align: center;
+  max-width: 220px;
+}
 .nav-toggle {
   display: flex;
   flex-direction: column;
@@ -155,6 +170,13 @@ section { padding: 4rem 0; }
   color: #fff;
   padding: 5rem 0 4rem;
   text-align: center;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+body.page-loaded .hero {
+  opacity: 1;
+  transform: translateY(0);
 }
 .hero h1 {
   color: #fff;
@@ -168,6 +190,10 @@ section { padding: 4rem 0; }
   max-width: 600px;
   margin: 0 auto 2rem;
   line-height: 1.7;
+}
+.hero .cta-microcopy {
+  color: #c8d8d0;
+  margin-top: 0.75rem;
 }
 .hero .btn { font-size: 1.05rem; padding: 1rem 2.5rem; }
 .hero-tagline {
@@ -257,7 +283,7 @@ section { padding: 4rem 0; }
   position: relative;
 }
 .program-includes li::before {
-  content: 'â';
+  content: '✓';
   position: absolute;
   left: 0;
   color: #7a9e8e;
@@ -391,7 +417,7 @@ section { padding: 4rem 0; }
   margin-left: 1rem;
 }
 .faq-item.open .faq-question::after {
-  content: 'â';
+  content: '−';
 }
 .faq-answer {
   max-height: 0;
@@ -434,6 +460,14 @@ section { padding: 4rem 0; }
   font-size: 1rem;
   margin-bottom: 0.75rem;
 }
+.footer-mark {
+  display: inline-flex;
+  align-items: center;
+}
+.footer-mark img {
+  height: 30px;
+  width: auto;
+}
 .footer a { color: #a0aec0; }
 .footer a:hover { color: #7a9e8e; }
 .footer-links { display: flex; flex-direction: column; gap: 0.4rem; }
@@ -448,7 +482,7 @@ section { padding: 4rem 0; }
 .footer-bottom a { color: #718096; }
 
 @media (min-width: 768px) {
-  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
 }
 
 /* --- Page Header (inner pages) --- */
@@ -513,7 +547,7 @@ section { padding: 4rem 0; }
   font-size: 0.92rem;
 }
 .detail-section ul li::before {
-  content: 'â¢';
+  content: '•';
   position: absolute;
   left: 0;
   color: #7a9e8e;
@@ -544,7 +578,7 @@ section { padding: 4rem 0; }
   font-size: 0.92rem;
 }
 .credential-list li::before {
-  content: 'â';
+  content: '→';
   position: absolute;
   left: 0;
   color: #7a9e8e;
@@ -605,6 +639,97 @@ section { padding: 4rem 0; }
   align-items: center !important;
   margin: 0 auto !important;
   transition: background-color 0.3s !important;
+}
+#loadFormButton:hover {
+  background-color: #7a9e8e !important;
+}
+
+.program-quarterly {
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+  color: #4a5568;
+}
+.program-note {
+  font-size: 0.78rem;
+  color: #4a5568;
+  margin-top: 0.6rem;
+}
+.compliance-disclaimer {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: #4a5568;
+}
+.cta-microcopy {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: #4a5568;
+}
+.cta-section .cta-microcopy {
+  color: #c8d8d0;
+}
+
+.complete-protocol {
+  background: #fff;
+  border: 1px solid #c8d8d0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0 1.75rem;
+}
+
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  background: #1a202c;
+  color: #f8f6f2;
+  padding: 0.9rem 1rem;
+  display: none;
+}
+.cookie-banner.show {
+  display: block;
+}
+.cookie-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.cookie-inner p {
+  margin: 0;
+  font-size: 0.82rem;
+}
+.cookie-inner a {
+  color: #7a9e8e;
+  text-decoration: underline;
+}
+.cookie-btn {
+  background: #2d4a3e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.cookie-btn:hover {
+  background: #7a9e8e;
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .hero h1,
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  .nav-logo img {
+    height: 30px;
+  }
 }
 
 /* --- Utility --- */
