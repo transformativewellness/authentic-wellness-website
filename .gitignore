@@ -3,3 +3,5 @@
 __pycache__/
 *.pyc
 .cursor/
+# Stripe API output (price IDs for GHL). Remove this line to commit the file.
+scripts/stripe-catalog-ids.json
