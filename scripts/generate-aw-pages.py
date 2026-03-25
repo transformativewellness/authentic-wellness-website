@@ -767,7 +767,7 @@ META: dict[str, dict] = {
             fq("Is metformin compounded?", "Your prescription and pharmacy determine formulation. Ask your physician."),
             fq("Who should not use metformin?", "There are medical reasons to avoid metformin. Your physician screens for those."),
             fq("Do I need labs?", "Your physician may order labs depending on your history."),
-            fq("Can I use metformin with GLP-1 therapy?", "Only your physician can decide if combination therapy is appropriate."),
+            fq("Can I use metformin with a GLP-1 program?", "Only your physician can decide if combined prescribing is appropriate."),
             fq("What will I receive?", "Your prescription and pharmacy determine the exact product. Compounded medications are not FDA-approved. Prepared by licensed 503A/503B pharmacies."),
         ],
     },
