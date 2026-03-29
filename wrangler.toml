@@ -1,7 +1,6 @@
 # Cloudflare Workers Static Assets — deploy from repo root
-# Replaces the deprecated Cloudflare Pages approach.
+# This replaces the deprecated Cloudflare Pages approach.
 # Docs: https://developers.cloudflare.com/workers/static-assets/
-# Account ID: CLOUDFLARE_ACCOUNT_ID in CI only (do not commit).
 name = "transformative-wellness"
 compatibility_date = "2026-03-28"
 

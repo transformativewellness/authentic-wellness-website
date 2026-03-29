@@ -1,13 +1,12 @@
 # Deploy static site to Cloudflare Workers (Static Assets)
-# Replaces the Pages-based workflow when Pages returns Unauthorized or no project exists.
+# Replaces the old Pages-based deploy that was returning "Unauthorized"
 #
-# Site files live at this repository root (index.html, css/, etc.).
+# Required GitHub repo secrets:
+#   CLOUDFLARE_API_TOKEN — API Token with "Workers Scripts: Edit" permission
+#   CLOUDFLARE_ACCOUNT_ID — Cloudflare account ID (set in repo secrets only; never commit)
 #
-# Required GitHub repo secrets (Settings → Secrets and variables → Actions):
-#   CLOUDFLARE_API_TOKEN — API token with Workers edit (template: "Edit Cloudflare Workers")
-#   CLOUDFLARE_ACCOUNT_ID — Account ID from Cloudflare dashboard → Overview
-#
-# After first successful deploy: Workers & Pages → transformative-wellness → Custom domains
+# Production URL: https://transformative-wellness.<your-subdomain>.workers.dev
+# Custom domain: Cloudflare dashboard → Workers & Pages → transformative-wellness → Settings → Domains & Routes
 name: Deploy to Cloudflare Workers
 
 on:
@@ -33,12 +32,12 @@ jobs:
           if [[ -z "${CLOUDFLARE_API_TOKEN}" ]]; then
             echo "::error::CLOUDFLARE_API_TOKEN is not set."
             echo "::error::Create token: dash.cloudflare.com → My Profile → API Tokens"
-            echo "::error::Template: Edit Cloudflare Workers (not Pages-only templates)"
+            echo "::error::Template: 'Edit Cloudflare Workers' (NOT Pages)"
             exit 1
           fi
           if [[ -z "${CLOUDFLARE_ACCOUNT_ID}" ]]; then
             echo "::error::CLOUDFLARE_ACCOUNT_ID is not set."
-            echo "::error::Find it: dash.cloudflare.com → any zone → Overview → Account ID"
+            echo "::error::Find it at dash.cloudflare.com → any zone → Overview → Account ID"
             exit 1
           fi
           echo "Both secrets verified."
