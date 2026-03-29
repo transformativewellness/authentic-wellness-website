@@ -1,0 +1,52 @@
+# Deploy static site to Cloudflare Workers (Static Assets)
+# Replaces the Pages-based workflow when Pages returns Unauthorized or no project exists.
+#
+# This repo root is a monorepo; the site and wrangler.toml live in transformative-wellness-website/.
+# Wrangler must be pointed at that config — a root-level wrangler.jsonc would otherwise win and
+# upload the whole repository as assets.
+#
+# Required GitHub repo secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN — API token with Workers edit (template: "Edit Cloudflare Workers")
+#   CLOUDFLARE_ACCOUNT_ID — Account ID from Cloudflare dashboard → Overview
+#
+# After first successful deploy: Workers & Pages → transformative-wellness → Custom domains
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify secrets
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [[ -z "${CLOUDFLARE_API_TOKEN}" ]]; then
+            echo "::error::CLOUDFLARE_API_TOKEN is not set."
+            echo "::error::Create token: dash.cloudflare.com → My Profile → API Tokens"
+            echo "::error::Template: Edit Cloudflare Workers (not Pages-only templates)"
+            exit 1
+          fi
+          if [[ -z "${CLOUDFLARE_ACCOUNT_ID}" ]]; then
+            echo "::error::CLOUDFLARE_ACCOUNT_ID is not set."
+            echo "::error::Find it: dash.cloudflare.com → any zone → Overview → Account ID"
+            exit 1
+          fi
+          echo "Both secrets verified."
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4 deploy --config transformative-wellness-website/wrangler.toml
