@@ -1,0 +1,4 @@
+# Dev / CI — not part of the public static site
+.github
+.wrangler
+scripts
