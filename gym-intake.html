@@ -279,7 +279,6 @@
     const email = document.getElementById('email').value.trim();
     const program = document.getElementById('program').value;
 
-    // Validate
     if (!firstName || !lastName) {
       errorEl.textContent = 'Please enter the patient\'s first and last name.';
       errorEl.style.display = 'block';
@@ -297,14 +296,17 @@
       return;
     }
 
-    // Disable buttons
     const buttons = form.querySelectorAll('button');
     buttons.forEach(b => { b.disabled = true; b.textContent = 'Submitting...'; });
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000);
 
     try {
       const resp = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        mode: 'cors',
         body: JSON.stringify({
           firstName,
           lastName,
@@ -312,12 +314,12 @@
           email: email || '',
           program,
           mode
-        })
+        }),
+        signal: controller.signal
       });
 
-      if (!resp.ok) throw new Error('Server error');
+      if (!resp.ok) throw new Error('Server responded with ' + resp.status);
 
-      // Show success
       document.getElementById('form-section').style.display = 'none';
       const successSection = document.getElementById('success-section');
       successSection.style.display = 'block';
@@ -326,7 +328,6 @@
         document.getElementById('success-title').textContent = 'Patient Added!';
         document.getElementById('success-detail').textContent =
           'Opening the Authentic Wellness consultation page now...';
-        // Open the site on the iPad so rep can hand it to patient or patient opens on their phone
         setTimeout(() => {
           window.open('https://authenticwellness.com?ref=gym&program=' + encodeURIComponent(program), '_blank');
         }, 1000);
@@ -337,9 +338,20 @@
       }
 
     } catch (err) {
-      errorEl.textContent = 'Something went wrong. Please try again or check your connection.';
+      console.error('Gym intake error:', err);
+      if (err.name === 'AbortError') {
+        errorEl.textContent = 'Request timed out. Check your internet connection and try again.';
+      } else if (
+        err.name === 'TypeError' ||
+        (err.message && (err.message.includes('Failed to fetch') || err.message.includes('NetworkError') || err.message.includes('Load failed')))
+      ) {
+        errorEl.textContent = 'Cannot reach the server. Make sure you have internet access and the page is served from a web server (not opened as a local file). If this keeps happening, ask IT about firewall or CORS settings.';
+      } else {
+        errorEl.textContent = 'Error: ' + (err.message || 'Unknown') + '. Please try again.';
+      }
       errorEl.style.display = 'block';
     } finally {
+      clearTimeout(timeoutId);
       buttons.forEach((b, i) => {
         b.disabled = false;
         b.textContent = i === 0 ? 'Text Link to Patient' : 'Start Consult Now';

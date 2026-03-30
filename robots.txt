@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://transformativewellness.github.io/authentic-wellness-website/sitemap.xml
+Sitemap: https://authenticwellness.com/sitemap.xml
