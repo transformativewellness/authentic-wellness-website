@@ -66,6 +66,46 @@ window.addEventListener("load", () => {
   document.body.classList.add("page-loaded");
 });
 
+/** Qualiphy disclosure: inject telehealth consent copy when modal mounts (script is external). */
+(function initQualiphyDisclosureEnhancements() {
+  const telehealthHtml =
+    "By proceeding, you consent to a virtual physician consultation via Qualiphy's secure telehealth platform. A licensed, independent physician will review your health history and determine if treatment is appropriate. Physician approval is required — this is not a guarantee of a prescription. You can access the full <a href=\"/terms.html\">Terms of Service</a> and <a href=\"/privacy.html\">Privacy Policy</a> below.";
+
+  function legalPathPrefix() {
+    const seg = window.location.pathname.split("/").filter(Boolean)[0];
+    return seg === "programs" || seg === "blog" ? "../" : "";
+  }
+
+  function prefixTermsPrivacyLinks(container) {
+    const prefix = legalPathPrefix();
+    container.querySelectorAll('a[href="/terms.html"], a[href="/privacy.html"]').forEach((a) => {
+      const href = a.getAttribute("href");
+      if (href === "/terms.html") {
+        a.setAttribute("href", `${prefix}terms.html`);
+      }
+      if (href === "/privacy.html") {
+        a.setAttribute("href", `${prefix}privacy.html`);
+      }
+    });
+  }
+
+  function enhanceInnerModel(inner) {
+    if (!inner || inner.dataset.awTelehealthEnhanced) return;
+    inner.dataset.awTelehealthEnhanced = "1";
+    const p = document.createElement("p");
+    p.className = "aw-disclosure-telehealth compliance-disclaimer";
+    p.innerHTML = telehealthHtml;
+    prefixTermsPrivacyLinks(p);
+    inner.insertBefore(p, inner.firstChild);
+  }
+
+  const obs = new MutationObserver(() => {
+    const inner = document.querySelector("#inner-model");
+    if (inner) enhanceInnerModel(inner);
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+})();
+
 const cookieBanner = document.getElementById("cookie-banner");
 const cookieDismiss = document.getElementById("cookie-dismiss");
 if (cookieBanner && cookieDismiss) {

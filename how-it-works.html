@@ -97,8 +97,8 @@
         <a href="about.html">About</a>
         <a href="faq.html">FAQ</a>
         <div class="nav-cta">
-          <a href="#start" class="btn btn-primary" style="padding:0.625rem 1.5rem;font-size:0.85rem;">See If You Qualify</a>
-          <p class="cta-microcopy">Full refund if not approved by your physician.</p>
+          <button type="button" class="btn btn-primary" style="padding:0.625rem 1.5rem;font-size:0.85rem;" onclick="showDisclosureModal()">See If You Qualify</button>
+          <p class="cta-microcopy">Full medication refund if not approved by your physician. Consultation fee is non-refundable.</p>
         </div>
       </div>
       <button class="nav-toggle" aria-label="Toggle navigation">
@@ -160,6 +160,7 @@
           <div>
             <h3>Results — With Ongoing Support</h3>
             <p>Follow your personalized protocol and track how you feel over time. Many patients notice changes within 2–4 weeks — better sleep, improved energy, faster recovery, or weight change depending on your program.</p>
+            <p class="compliance-disclaimer" style="margin-top:0.75rem;font-size:0.9rem;">Results may vary. Individual outcomes depend on health history, adherence, and physician recommendations.</p>
             <p>You'll receive check-ins at days 3, 7, 14, and 30. Our care team is available throughout your program for logistics and coordination. At day 80, you'll receive a renewal prompt to continue your progress seamlessly.</p>
           </div>
         </div>
@@ -181,8 +182,7 @@
           Start My Program
         </div>
       </div>
-      <p style="display:none" id="not-available">Not available!</p>
-      <p class="cta-microcopy">Full refund if not approved by your physician.</p>
+<p class="cta-microcopy">Full medication refund if not approved by your physician. Consultation fee is non-refundable.</p>
       <p style="margin-top:1.5rem;font-size:0.85rem;color:#4a5568;">Secure Qualiphy platform · No appointment needed</p>
     </div>
   </section>
@@ -217,8 +217,8 @@
     <div class="container">
       <h2>Ready to Start?</h2>
       <p>Your physician consultation is the only thing between you and optimized performance.</p>
-      <a href="#start" class="btn btn-amber" style="font-size:1.05rem;padding:1rem 2.5rem;">Start My Program →</a>
-      <p class="cta-microcopy">Full refund if not approved by your physician.</p>
+      <button type="button" class="btn btn-amber" style="font-size:1.05rem;padding:1rem 2.5rem;" onclick="showDisclosureModal()">Start My Program →</button>
+      <p class="cta-microcopy">Full medication refund if not approved by your physician. Consultation fee is non-refundable.</p>
     </div>
   </section>
 
@@ -263,8 +263,9 @@
         <p>&copy; 2026 Authentic Wellness — Evolving Wellness LLC. All rights reserved.</p>
         <p>Medical Director: Joshua Yang M.D. Inc (Dr. Joshua Yang, MD) · CA License A167038 · NPI 1851549232</p>
         <p>Physician-prescribed programs. Medications sourced from licensed 503A/503B compounding pharmacies.</p>
-        <p>Compounded medications are not FDA-approved. Prepared by licensed 503A/503B pharmacies. Results may vary. Physician approval required.</p>
-        <p>Authentic Wellness is not a medical practice. We facilitate access to independent licensed physicians via Qualiphy.</p>
+        <p>Compounded medications are prepared by state-licensed 503A/503B compounding pharmacies and are not FDA-approved. These medications are prescribed by independent licensed physicians based on individual patient needs. Authentic Wellness does not manufacture, compound, or dispense any medications. Results may vary. Physician approval required.</p>
+        <p>Telehealth services may not be available in all states. Eligibility is determined during your consultation.</p>
+        <p>Authentic Wellness is a wellness platform, not a medical practice. All medical decisions, prescriptions, and treatment plans are made solely by independent licensed physicians through Qualiphy. Authentic Wellness does not provide medical advice, diagnoses, or treatment. We facilitate access to independent licensed physicians via Qualiphy.</p>
         <p>Authentic Wellness is affiliated with <a href="https://transformativemedspa.com">Transformative Wellness</a> in Vista, CA.</p>
         <p>In-clinic programs available at Transformative Wellness — Vista, CA → <a href="https://transformativemedspa.com">transformativemedspa.com</a></p>
       </div>
