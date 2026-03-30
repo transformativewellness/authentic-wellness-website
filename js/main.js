@@ -1,10 +1,56 @@
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
+const navInner = document.querySelector(".nav-inner");
+
+let navScrollLockY = 0;
+
+function setMobileNavOpen(open) {
+  if (!navLinks || !navToggle) return;
+  const wasOpen = navLinks.classList.contains("open");
+  navLinks.classList.toggle("open", open);
+  navToggle.classList.toggle("active", open);
+  navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  document.body.classList.toggle("nav-menu-open", open);
+  if (open) {
+    navScrollLockY = window.scrollY;
+    document.body.style.top = `-${navScrollLockY}px`;
+  } else if (wasOpen) {
+    document.body.style.top = "";
+    window.scrollTo(0, navScrollLockY);
+  }
+}
 
 if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-    navToggle.classList.toggle("active");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-controls", "primary-navigation");
+
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setMobileNavOpen(!navLinks.classList.contains("open"));
+  });
+
+  navLinks.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => setMobileNavOpen(false));
+  });
+
+  navLinks.querySelectorAll("button").forEach((btn) => {
+    if (btn.classList.contains("nav-dropdown-toggle")) return;
+    btn.addEventListener("click", () => {
+      window.setTimeout(() => setMobileNavOpen(false), 350);
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!navLinks.classList.contains("open")) return;
+    if (navInner && !navInner.contains(e.target)) {
+      setMobileNavOpen(false);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 768px)").matches && navLinks.classList.contains("open")) {
+      setMobileNavOpen(false);
+    }
   });
 }
 
@@ -36,7 +82,11 @@ document.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeAllNavDropdowns();
+  if (e.key !== "Escape") return;
+  if (navLinks?.classList.contains("open")) {
+    setMobileNavOpen(false);
+  }
+  closeAllNavDropdowns();
 });
 
 document.querySelectorAll(".nav-dropdown-menu").forEach((menu) => {
