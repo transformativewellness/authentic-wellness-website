@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authentic Wellness | Physician-Prescribed Peptide &amp; GLP-1 Programs</title>
-  <meta name="description" content="Physician-prescribed peptide and GLP-1 weight loss programs. Virtual consultation, 3-month supply, shipped to your door from licensed pharmacies.">
+  <title>Feel Your Best — Physician-Prescribed Programs | Authentic Wellness</title>
+  <meta name="description" content="Optimize energy, recovery, and longevity with physician-prescribed peptide and GLP-1 programs. Virtual consult, 3-month supply, nationwide shipping from licensed compounding pharmacies.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://authenticwellness.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Authentic Wellness">
-  <meta property="og:title" content="Authentic Wellness — Physician-Prescribed Peptide &amp; GLP-1 Programs">
-  <meta property="og:description" content="Pharmaceutical-grade peptide programs and GLP-1 weight loss — virtual physician consultation, 3-month supply, zero clinic visits.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Feel Your Best — Physician-Prescribed Programs | Authentic Wellness">
+  <meta property="og:description" content="Pharmaceutical-grade peptide and GLP-1 programs: virtual physician consultation, 3-month supply, shipped nationwide. PATH Peptides–sourced protocols, third-party tested.">
   <meta property="og:url" content="https://authenticwellness.com/">
   <meta property="og:image" content="https://authenticwellness.com/logo-mark.svg">
+  <meta property="og:image:alt" content="Authentic Wellness logo">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Authentic Wellness | Physician-Prescribed Peptide &amp; GLP-1 Programs">
-  <meta name="twitter:description" content="Physician-prescribed peptide and GLP-1 programs with a virtual consultation, 3-month supply, and nationwide shipping. See if you qualify through Qualiphy.">
-  <meta name="twitter:image" content="https://transformativewellness.github.io/authentic-wellness-website/logo-mark.svg">
+  <meta name="twitter:title" content="Feel Your Best — Physician-Prescribed Programs | Authentic Wellness">
+  <meta name="twitter:description" content="Physician-prescribed peptide and GLP-1 programs: virtual consultation, 3-month supply, nationwide shipping. Medication fees refunded if not approved by your physician.">
+  <meta name="twitter:image" content="https://authenticwellness.com/logo-mark.svg">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,18 +28,79 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Authentic Wellness",
-    "url": "https://authenticwellness.com/",
-    "image": "https://authenticwellness.com/logo-mark.svg",
-    "logo": "https://authenticwellness.com/logo-dark.svg",
-    "email": "info@authenticwellness.com",
-    "description": "Physician-prescribed peptide and GLP-1 telehealth programs facilitated through Qualiphy.",
-    "medicalSpecialty": "Telehealth",
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://authenticwellness.com/#organization",
+        "name": "Authentic Wellness",
+        "alternateName": "Evolving Wellness LLC",
+        "url": "https://authenticwellness.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://authenticwellness.com/logo-dark.svg"
+        },
+        "email": "info@authenticwellness.com",
+        "description": "Physician-prescribed peptide and GLP-1 telehealth programs. Independent licensed physicians via Qualiphy; medications from licensed 503A/503B pharmacies.",
+        "sameAs": [
+          "https://transformativemedspa.com"
+        ]
+      },
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://authenticwellness.com/#medicalbusiness",
+        "name": "Authentic Wellness",
+        "url": "https://authenticwellness.com/",
+        "image": "https://authenticwellness.com/logo-mark.svg",
+        "logo": "https://authenticwellness.com/logo-dark.svg",
+        "email": "info@authenticwellness.com",
+        "description": "Telehealth access to physician-prescribed performance, longevity, and weight-management programs shipped nationwide.",
+        "areaServed": { "@type": "Country", "name": "United States" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://authenticwellness.com/#website",
+        "url": "https://authenticwellness.com/",
+        "name": "Authentic Wellness",
+        "publisher": { "@id": "https://authenticwellness.com/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://authenticwellness.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this legal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Medications are prescribed by a licensed, independent physician after a virtual physician consultation through Qualiphy and dispensed by licensed 503A/503B compounding pharmacies. Programs are overseen by Dr. Joshua Yang, MD (Medical Director)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the virtual consult work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your virtual physician consultation happens through our secure Qualiphy telehealth platform. A licensed physician reviews your health history, discusses your goals, and determines whether a program is appropriate. It is available 7 days a week from your phone or computer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if I have questions after starting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our care team is available for ongoing support throughout your program. You'll receive check-ins at days 3, 7, and 30, plus you can reach us anytime by text or email."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Perform peptide program",
+        "description": "Physician-prescribed CJC-1295/Ipamorelin program with virtual consultation and 3-month peptide supply from a licensed pharmacy.",
+        "provider": { "@id": "https://authenticwellness.com/#organization" },
+        "areaServed": { "@type": "Country", "name": "United States" }
+      }
+    ]
   }
   </script>
   <!-- Qualiphy Quidget Part 1 — stylesheet -->
@@ -56,6 +119,11 @@
           <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" id="programs-menu-btn">Programs <span class="nav-caret" aria-hidden="true"></span></button>
           <div class="nav-dropdown-menu" id="programs-menu" role="menu" aria-label="Program categories">
             <div class="nav-dropdown-grid">
+            <div class="nav-dropdown-overview">
+                <a href="programs.html" class="nav-dropdown-all" role="menuitem">Browse all programs</a>
+                <p class="nav-dropdown-overview-copy">Compare plans, compounds, and pricing in one place.</p>
+              </div>
+
               <div class="nav-dropdown-col">
                 <span class="nav-dropdown-heading">Performance</span>
                 <a href="programs/perform.html" role="menuitem">Perform</a>
@@ -117,8 +185,9 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>Physician-Prescribed Performance. Delivered to Your Door.</h1>
-      <p class="subtitle">Pharmaceutical-grade peptide programs and GLP-1 weight loss — virtual physician consultation, 3-month supply, zero clinic visits.</p>
+      <h1>Feel your best — physician-prescribed programs, delivered to your door.</h1>
+      <p class="subtitle">Unlock energy, recovery, and longevity with pharmaceutical-grade peptides and GLP-1 options. Independent licensed physicians, virtual consultation, 3-month supply — zero clinic visits.</p>
+      <p class="hero-social-proof">Trusted nationwide — the same physician-led standards as our Vista, CA partner clinic, <a href="https://transformativemedspa.com">Transformative Wellness</a>.</p>
       <div id="hero-quidget">
         <div id="main-qualiphy-widget">
           <button type="button" class="btn btn-amber" style="font-size:1.05rem;padding:1rem 2.5rem;" onclick="showDisclosureModal()">

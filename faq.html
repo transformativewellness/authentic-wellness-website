@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ | Authentic Wellness</title>
   <meta name="description" content="Answers about physician-prescribed peptide and GLP-1 programs, Qualiphy telehealth, pharmacy shipping, refunds, and California compliance.">
-  <link rel="canonical" href="https://transformativewellness.github.io/authentic-wellness-website/faq.html">
+  <link rel="canonical" href="https://authenticwellness.com/faq.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Authentic Wellness">
   <meta property="og:title" content="FAQ | Authentic Wellness">
   <meta property="og:description" content="Answers about physician-prescribed peptide and GLP-1 programs, Qualiphy telehealth, pharmacy shipping, refunds, and California compliance.">
-  <meta property="og:url" content="https://transformativewellness.github.io/authentic-wellness-website/faq.html">
-  <meta property="og:image" content="https://transformativewellness.github.io/authentic-wellness-website/logo-mark.svg">
+  <meta property="og:url" content="https://authenticwellness.com/faq.html">
+  <meta property="og:image" content="https://authenticwellness.com/logo-mark.svg">
+  <meta property="og:image:alt" content="Authentic Wellness logo">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FAQ | Authentic Wellness">
   <meta name="twitter:description" content="Answers about physician-prescribed peptide and GLP-1 programs, Qualiphy telehealth, pharmacy shipping, refunds, and California compliance.">
-  <meta name="twitter:image" content="https://transformativewellness.github.io/authentic-wellness-website/logo-mark.svg">
+  <meta name="twitter:image" content="https://authenticwellness.com/logo-mark.svg">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,56 +30,112 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Authentic Wellness",
-    "url": "https://transformativewellness.github.io/authentic-wellness-website/faq.html",
-    "image": "https://transformativewellness.github.io/authentic-wellness-website/logo-mark.svg",
-    "logo": "https://transformativewellness.github.io/authentic-wellness-website/logo-dark.svg",
-    "email": "info@authenticwellness.com",
-    "description": "Physician-prescribed peptide and GLP-1 telehealth programs facilitated through Qualiphy.",
-    "medicalSpecialty": "Telehealth",
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "Is Authentic Wellness legitimate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Authentic Wellness is not a medical practice. We facilitate access to independent licensed physicians via Qualiphy. Programs are overseen by Dr. Joshua Yang, MD (Medical Director)."
-        }
+        "@type": "Organization",
+        "@id": "https://authenticwellness.com/#organization",
+        "name": "Authentic Wellness",
+        "alternateName": "Evolving Wellness LLC",
+        "url": "https://authenticwellness.com/",
+        "logo": { "@type": "ImageObject", "url": "https://authenticwellness.com/logo-dark.svg" },
+        "email": "info@authenticwellness.com"
       },
       {
-        "@type": "Question",
-        "name": "Are compounded medications FDA-approved?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Compounded medications are not FDA-approved. They are prepared by licensed 503A/503B pharmacies when prescribed by a physician for a specific patient."
-        }
+        "@type": "MedicalBusiness",
+        "@id": "https://authenticwellness.com/#medicalbusiness",
+        "name": "Authentic Wellness",
+        "url": "https://authenticwellness.com/faq.html",
+        "image": "https://authenticwellness.com/logo-mark.svg",
+        "logo": "https://authenticwellness.com/logo-dark.svg",
+        "email": "info@authenticwellness.com",
+        "description": "Physician-prescribed peptide and GLP-1 telehealth programs facilitated through Qualiphy.",
+        "areaServed": { "@type": "Country", "name": "United States" }
       },
       {
-        "@type": "Question",
-        "name": "Do I have to inject myself?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Many programs use subcutaneous injection, but prefer not to inject? Nasal spray and sublingual options may be available depending on your physician-approved plan."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is your refund policy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If your independent physician does not approve medication, medication-related enrollment fees are refunded in full. Consultation fees (including paid discovery consults) are non-refundable. See Terms of Service for details."
-        }
+        "@type": "FAQPage",
+        "@id": "https://authenticwellness.com/faq.html#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Authentic Wellness legitimate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Authentic Wellness operates under Evolving Wellness LLC as a physician-prescribed telehealth brand. Authentic Wellness is not a medical practice — we facilitate access to independent licensed physicians via Qualiphy. Programs are overseen by Dr. Joshua Yang, MD (CA License A167038, NPI 1851549232), who serves as Medical Director."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are compounded medications FDA-approved?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Compounded medications are not FDA-approved. They are prepared by licensed 503A/503B pharmacies when prescribed by a physician for a specific patient."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know the medications are safe and pure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Peptide programs are sourced through PATH Peptides with lyophilized (freeze-dried) handling and third-party testing; Certificates of Analysis (COAs) are available on request. GLP-1 medications are dispensed through OptioRx, a licensed compounding pharmacy. Compounded medications are not FDA-approved. Prepared by licensed 503A/503B pharmacies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who oversees my care?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dr. Joshua Yang, MD serves as Medical Director for program oversight and safety standards. Your evaluation is completed by an independent licensed physician through Qualiphy. Our care team supports logistics, coordination, and non-medical questions throughout your program."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to inject myself?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Many programs use subcutaneous injection, which means a very small needle into the fatty tissue just below the skin (typically the abdomen or thigh). Prefer not to inject? Nasal spray and sublingual options may be available depending on your physician-approved plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does shipping work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "After your physician prescribes your program, your medication ships directly from our licensed compounding pharmacy to your home. Peptide programs ship from PATH Peptides and GLP-1 medications ship from OptioRx. Standard delivery is within 3 business days. Cold-chain shipping is used when required to maintain compound stability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is your refund policy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If your independent physician does not approve medication for you, you receive a full refund of medication-related enrollment fees. Consultation fees (including any paid discovery consult) are non-refundable. Once medication has shipped, it cannot be returned or refunded due to pharmaceutical handling regulations. See Terms of Service for full details."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is telehealth prescribing legal in California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. California law permits physicians to prescribe medications via telehealth after conducting an appropriate evaluation. Our Qualiphy platform facilitates a synchronous (real-time) video or audio consultation where a licensed physician reviews your health history, conducts the evaluation, and determines whether a prescription is appropriate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is NAD+?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NAD+ (nicotinamide adenine dinucleotide) is a coenzyme found in every cell of your body. It's essential for mitochondrial energy production, DNA repair, and cellular signaling. NAD+ levels decline significantly with age. Supplementing NAD+ supports sustained energy, mental clarity, cellular repair, and healthy aging at the molecular level. Compounded medications are not FDA-approved. Prepared by licensed 503A/503B pharmacies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do GLP-1 medications work for weight loss?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GLP-1 receptor agonists (semaglutide and tirzepatide) mimic the incretin hormone GLP-1 in your body. They help regulate appetite by signaling fullness to your brain, slow gastric emptying so you feel satisfied longer, and improve insulin sensitivity. When combined with lifestyle modifications, many people see meaningful weight change. Your physician determines the appropriate compound and dosing. Compounded medications are not FDA-approved. Prepared by licensed 503A/503B pharmacies."
+            }
+          }
+        ]
       }
     ]
   }
@@ -96,6 +154,11 @@
           <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" id="programs-menu-btn">Programs <span class="nav-caret" aria-hidden="true"></span></button>
           <div class="nav-dropdown-menu" id="programs-menu" role="menu" aria-label="Program categories">
             <div class="nav-dropdown-grid">
+            <div class="nav-dropdown-overview">
+                <a href="programs.html" class="nav-dropdown-all" role="menuitem">Browse all programs</a>
+                <p class="nav-dropdown-overview-copy">Compare plans, compounds, and pricing in one place.</p>
+              </div>
+
               <div class="nav-dropdown-col">
                 <span class="nav-dropdown-heading">Performance</span>
                 <a href="programs/perform.html" role="menuitem">Perform</a>

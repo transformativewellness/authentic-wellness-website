@@ -222,10 +222,12 @@ button.btn {
 
 /* --- Hero --- */
 .hero {
-  background: linear-gradient(135deg, #2d4a3e 0%, #3a5f50 100%);
+  background: linear-gradient(135deg, #2d4a3e 0%, #3a5f50 72%, #4d5c46 100%);
   color: #fff;
   padding: 5rem 0 4rem;
   text-align: center;
+  position: relative;
+  box-shadow: inset 0 4px 0 #d4a853;
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -246,6 +248,23 @@ body.page-loaded .hero {
   max-width: 600px;
   margin: 0 auto 2rem;
   line-height: 1.7;
+}
+.hero-social-proof {
+  color: #f0e6d2;
+  font-size: 0.92rem;
+  font-weight: 600;
+  max-width: 520px;
+  margin: -1.25rem auto 1.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+.hero-social-proof a {
+  color: #f5ecd8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.hero-social-proof a:hover {
+  color: #fff;
 }
 .hero .cta-microcopy {
   color: #c8d8d0;
@@ -397,8 +416,9 @@ body.page-loaded .hero {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #2d4a3e;
+  background: linear-gradient(145deg, #2d4a3e 0%, #3d5c4d 55%, #c49a4a 160%);
   color: #fff;
+  box-shadow: 0 2px 8px rgba(212, 168, 83, 0.25);
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   font-weight: 700;
@@ -417,7 +437,7 @@ body.page-loaded .hero {
 /* --- Trust Bar --- */
 .trust-bar {
   background: #fff;
-  border-top: 1px solid #e2e0dc;
+  border-top: 3px solid #d4a853;
   border-bottom: 1px solid #e2e0dc;
   padding: 2rem 0;
 }
@@ -438,7 +458,7 @@ body.page-loaded .hero {
 .trust-icon {
   width: 20px;
   height: 20px;
-  background: #7a9e8e;
+  background: #d4a853;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -876,6 +896,30 @@ body.page-loaded .hero {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+}
+.nav-dropdown-overview {
+  grid-column: 1 / -1;
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid #e8e4de;
+}
+.nav-dropdown-all {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #2d4a3e;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.nav-dropdown-all:hover {
+  color: #c49a4a;
+}
+.nav-dropdown-overview-copy {
+  font-size: 0.78rem;
+  color: #718096;
+  margin: 0.35rem 0 0;
+  line-height: 1.45;
+  font-weight: 500;
 }
 @media (min-width: 900px) {
   .nav-dropdown-grid {
