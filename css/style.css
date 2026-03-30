@@ -819,6 +819,59 @@ body.page-loaded .hero {
   background: #7a9e8e;
 }
 
+/* --- Mobile sticky conversion bar (Qualiphy CTA) --- */
+.aw-mobile-sticky-cta {
+  display: none;
+}
+@media (max-width: 767px) {
+  body.aw-has-mobile-sticky-cta {
+    padding-bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
+  }
+  body.aw-has-mobile-sticky-cta.aw-cookie-visible {
+    padding-bottom: calc(10.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  body.aw-has-mobile-sticky-cta .aw-mobile-sticky-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    bottom: env(safe-area-inset-bottom, 0px);
+    padding: 0.55rem 1rem 0.65rem;
+    background: rgba(248, 246, 242, 0.97);
+    border-top: 1px solid #e2e0dc;
+    box-shadow: 0 -6px 28px rgba(45, 74, 62, 0.14);
+  }
+  body.aw-cookie-visible .aw-mobile-sticky-cta {
+    bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  body.nav-menu-open .aw-mobile-sticky-cta {
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .aw-mobile-sticky-cta-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+  .aw-mobile-sticky-cta-btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+  .aw-mobile-sticky-cta-micro {
+    margin: 0;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    color: #718096;
+    text-align: center;
+  }
+}
+
 @media (max-width: 375px) {
   .container {
     padding: 0 1rem;

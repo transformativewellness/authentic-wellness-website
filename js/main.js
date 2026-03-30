@@ -114,7 +114,70 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 window.addEventListener("load", () => {
   document.body.classList.add("page-loaded");
+  initMobileStickyCta();
 });
+
+/**
+ * Fixed bottom CTA on small viewports — keeps primary conversion action one tap away after scroll.
+ * Requires Qualiphy's showDisclosureModal (loaded before this runs on window load).
+ */
+function initMobileStickyCta() {
+  const mq = window.matchMedia("(max-width: 767px)");
+
+  function removeBar() {
+    document.getElementById("aw-mobile-sticky-cta")?.remove();
+    document.body.classList.remove("aw-has-mobile-sticky-cta");
+  }
+
+  function mountBar() {
+    if (typeof window.showDisclosureModal !== "function") return;
+    if (document.getElementById("aw-mobile-sticky-cta")) {
+      document.body.classList.add("aw-has-mobile-sticky-cta");
+      return;
+    }
+
+    const bar = document.createElement("div");
+    bar.id = "aw-mobile-sticky-cta";
+    bar.className = "aw-mobile-sticky-cta";
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Start your program");
+
+    const inner = document.createElement("div");
+    inner.className = "aw-mobile-sticky-cta-inner";
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-amber aw-mobile-sticky-cta-btn";
+    btn.textContent = "Start my program";
+    btn.addEventListener("click", () => {
+      if (typeof window.showDisclosureModal === "function") {
+        window.showDisclosureModal();
+      }
+    });
+
+    const micro = document.createElement("p");
+    micro.className = "aw-mobile-sticky-cta-micro";
+    micro.textContent =
+      "Full medication refund if not approved by your physician. Consultation fee is non-refundable.";
+
+    inner.appendChild(btn);
+    inner.appendChild(micro);
+    bar.appendChild(inner);
+    document.body.appendChild(bar);
+    document.body.classList.add("aw-has-mobile-sticky-cta");
+  }
+
+  function apply() {
+    if (!mq.matches) {
+      removeBar();
+      return;
+    }
+    mountBar();
+  }
+
+  apply();
+  mq.addEventListener("change", apply);
+}
 
 /** Qualiphy disclosure: inject telehealth consent copy when modal mounts (script is external). */
 (function initQualiphyDisclosureEnhancements() {
@@ -160,9 +223,13 @@ const cookieBanner = document.getElementById("cookie-banner");
 const cookieDismiss = document.getElementById("cookie-dismiss");
 if (cookieBanner && cookieDismiss) {
   const cookieAccepted = localStorage.getItem("aw_cookie_consent");
-  if (!cookieAccepted) cookieBanner.classList.add("show");
+  if (!cookieAccepted) {
+    cookieBanner.classList.add("show");
+    document.body.classList.add("aw-cookie-visible");
+  }
   cookieDismiss.addEventListener("click", () => {
     localStorage.setItem("aw_cookie_consent", "accepted");
     cookieBanner.classList.remove("show");
+    document.body.classList.remove("aw-cookie-visible");
   });
 }
