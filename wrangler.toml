@@ -1,7 +1,7 @@
 # Cloudflare Workers Static Assets — deploy from repo root
 # This replaces the deprecated Cloudflare Pages approach.
 # Docs: https://developers.cloudflare.com/workers/static-assets/
-name = "transformative-wellness"
+name = "authentic-wellness"
 compatibility_date = "2026-03-28"
 
 [assets]

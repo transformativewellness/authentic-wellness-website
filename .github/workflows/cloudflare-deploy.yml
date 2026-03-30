@@ -5,8 +5,8 @@
 #   CLOUDFLARE_API_TOKEN — API Token with "Workers Scripts: Edit" permission
 #   CLOUDFLARE_ACCOUNT_ID — Cloudflare account ID (set in repo secrets only; never commit)
 #
-# Production URL: https://transformative-wellness.<your-subdomain>.workers.dev
-# Custom domain: Cloudflare dashboard → Workers & Pages → transformative-wellness → Settings → Domains & Routes
+# Production URL: https://authentic-wellness.<your-subdomain>.workers.dev
+# Custom domain: Cloudflare dashboard → Workers & Pages → authentic-wellness → Settings → Domains & Routes
 name: Deploy to Cloudflare Workers
 
 on:
