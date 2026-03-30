@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Authentic Wellness — Gym Intake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f5f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #2c4a3e;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    .subtitle {
+      color: #888;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: #2c4a3e;
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .card-sub {
+      color: #888;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      font-weight: 500;
+      color: #2c4a3e;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      margin-top: 1rem;
+    }
+    label:first-of-type { margin-top: 0; }
+    input, select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      background: #fafafa;
+      -webkit-appearance: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #c8973e;
+      background: #fff;
+    }
+    input::placeholder { color: #bbb; }
+    .row {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .row > div { flex: 1; }
+    .btn-group {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+    button {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: transform 0.1s, opacity 0.2s;
+    }
+    button:active { transform: scale(0.97); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-primary {
+      background: #2c4a3e;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #1e3a2e; }
+    .btn-secondary {
+      background: #c8973e;
+      color: #fff;
+    }
+    .btn-secondary:hover { background: #b0832f; }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .success-msg .check {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .success-msg h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: #2c4a3e;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .success-msg p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .success-msg button {
+      margin-top: 1.5rem;
+      background: #2c4a3e;
+      color: #fff;
+      padding: 0.85rem 2rem;
+      flex: none;
+    }
+    .error-msg {
+      background: #fef2f2;
+      color: #b91c1c;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      display: none;
+    }
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.75rem;
+      max-width: 480px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">Authentic Wellness</div>
+  <div class="subtitle">Gym Intake Portal</div>
+
+  <div class="card">
+    <div id="form-section">
+      <h2>New Patient</h2>
+      <p class="card-sub">Enter patient info. They'll get a text to complete consult + payment on their phone.</p>
+
+      <form id="intake-form" onsubmit="return false;">
+        <div class="row">
+          <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First" required autocomplete="off">
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last" required autocomplete="off">
+          </div>
+        </div>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 555-1234" required autocomplete="off"
+               oninput="formatPhone(this)">
+
+        <label for="email">Email <span style="color:#aaa; font-weight:400;">(optional)</span></label>
+        <input type="email" id="email" name="email" placeholder="patient@email.com" autocomplete="off">
+
+        <label for="program">Program Interest</label>
+        <select id="program" name="program" required>
+          <option value="">Select a program...</option>
+          <optgroup label="Performance">
+            <option value="Perform (CJC/Ipamorelin)">Perform — CJC-1295/Ipamorelin</option>
+            <option value="Renew (Sermorelin)">Renew — Sermorelin</option>
+            <option value="Tesamorelin">Tesamorelin</option>
+          </optgroup>
+          <optgroup label="Longevity">
+            <option value="NAD+">NAD+</option>
+            <option value="Epithalon">Epithalon</option>
+            <option value="MOTS-c">MOTS-c</option>
+            <option value="Methylene Blue">Methylene Blue</option>
+            <option value="GHK-Cu">GHK-Cu</option>
+          </optgroup>
+          <optgroup label="Cognitive">
+            <option value="Semax/Selank">Semax / Selank</option>
+          </optgroup>
+          <optgroup label="Weight Loss">
+            <option value="GLP-1 Semaglutide">GLP-1 Semaglutide</option>
+            <option value="GLP-1 Tirzepatide">GLP-1 Tirzepatide</option>
+            <option value="LDN">LDN</option>
+            <option value="Metformin">Metformin</option>
+          </optgroup>
+          <optgroup label="Sexual Wellness">
+            <option value="PT-141">PT-141</option>
+            <option value="Sildenafil (ED)">Sildenafil (ED)</option>
+            <option value="Tadalafil (ED)">Tadalafil (ED)</option>
+          </optgroup>
+          <optgroup label="Hair & Skin">
+            <option value="Male Hair Loss">Male Hair Loss</option>
+            <option value="Female Hair Loss">Female Hair Loss</option>
+          </optgroup>
+          <optgroup label="Discovery">
+            <option value="Discovery Consult">Discovery Consult ($49)</option>
+          </optgroup>
+        </select>
+
+        <div class="btn-group">
+          <button type="button" class="btn-primary" onclick="submitForm('send_link')">
+            Text Link to Patient
+          </button>
+          <button type="button" class="btn-secondary" onclick="submitForm('start_now')">
+            Start Consult Now
+          </button>
+        </div>
+
+        <div class="error-msg" id="error-msg"></div>
+      </form>
+    </div>
+
+    <div class="success-msg" id="success-section">
+      <div class="check">&#10003;</div>
+      <h3 id="success-title">Link Sent!</h3>
+      <p id="success-detail">A text was sent to the patient's phone with their consultation link.</p>
+      <button onclick="resetForm()">Add Another Patient</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    Authentic Wellness — Evolving Wellness LLC<br>
+    Physician-prescribed programs. Not a medical practice.<br>
+    Compounded medications are not FDA-approved.
+  </div>
+
+<script>
+  // ====== CONFIGURATION ======
+  // Replace with your actual n8n webhook URL after publishing the workflow
+  const WEBHOOK_URL = 'https://transformative.app.n8n.cloud/webhook/gym-intake';
+  // ===========================
+
+  function formatPhone(input) {
+    let val = input.value.replace(/\D/g, '');
+    if (val.length > 10) val = val.slice(0, 10);
+    if (val.length >= 7) {
+      input.value = '(' + val.slice(0,3) + ') ' + val.slice(3,6) + '-' + val.slice(6);
+    } else if (val.length >= 4) {
+      input.value = '(' + val.slice(0,3) + ') ' + val.slice(3);
+    } else if (val.length > 0) {
+      input.value = '(' + val;
+    }
+  }
+
+  async function submitForm(mode) {
+    const form = document.getElementById('intake-form');
+    const errorEl = document.getElementById('error-msg');
+    errorEl.style.display = 'none';
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const program = document.getElementById('program').value;
+
+    // Validate
+    if (!firstName || !lastName) {
+      errorEl.textContent = 'Please enter the patient\'s first and last name.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    const phoneDigits = phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      errorEl.textContent = 'Please enter a valid 10-digit phone number.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    if (!program) {
+      errorEl.textContent = 'Please select a program.';
+      errorEl.style.display = 'block';
+      return;
+    }
+
+    // Disable buttons
+    const buttons = form.querySelectorAll('button');
+    buttons.forEach(b => { b.disabled = true; b.textContent = 'Submitting...'; });
+
+    try {
+      const resp = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          phone: phoneDigits,
+          email: email || '',
+          program,
+          mode
+        })
+      });
+
+      if (!resp.ok) throw new Error('Server error');
+
+      // Show success
+      document.getElementById('form-section').style.display = 'none';
+      const successSection = document.getElementById('success-section');
+      successSection.style.display = 'block';
+
+      if (mode === 'start_now') {
+        document.getElementById('success-title').textContent = 'Patient Added!';
+        document.getElementById('success-detail').textContent =
+          'Opening the Authentic Wellness consultation page now...';
+        // Open the site on the iPad so rep can hand it to patient or patient opens on their phone
+        setTimeout(() => {
+          window.open('https://authenticwellness.com?ref=gym&program=' + encodeURIComponent(program), '_blank');
+        }, 1000);
+      } else {
+        document.getElementById('success-title').textContent = 'Link Sent!';
+        document.getElementById('success-detail').textContent =
+          'A text was sent to ' + phone + ' with their consultation link. They can complete everything on their phone with Apple Pay.';
+      }
+
+    } catch (err) {
+      errorEl.textContent = 'Something went wrong. Please try again or check your connection.';
+      errorEl.style.display = 'block';
+    } finally {
+      buttons.forEach((b, i) => {
+        b.disabled = false;
+        b.textContent = i === 0 ? 'Text Link to Patient' : 'Start Consult Now';
+      });
+    }
+  }
+
+  function resetForm() {
+    document.getElementById('form-section').style.display = 'block';
+    document.getElementById('success-section').style.display = 'none';
+    document.getElementById('intake-form').reset();
+  }
+</script>
+</body>
+</html>
