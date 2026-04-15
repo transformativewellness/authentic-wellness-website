@@ -155,6 +155,42 @@
       line-height: 1.5;
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.authenticwellness.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Gym intake",
+      "item": "https://www.authenticwellness.com/gym-intake.html"
+    }
+  ]
+}
+  </script>
+<!-- aw-medical-org -->
+
+ <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "Authentic Wellness",
+    "alternateName": "Evolving Wellness LLC DBA Authentic Wellness",
+    "url": "https://www.authenticwellness.com",
+    "logo": "https://www.authenticwellness.com/logo-dark.svg",
+    "description": "Physician-prescribed peptide therapy and GLP-1 programs delivered via telehealth, overseen by a licensed California physician and compounded at FDA-registered pharmacies.",
+    "medicalSpecialty": ["PreventiveMedicine", "Endocrine"],
+    "sameAs": ["https://www.instagram.com/authenticwellness"]
+  }
+  </script>
+
 </head>
 <body>
 
@@ -323,7 +359,7 @@
         document.getElementById('success-detail').textContent =
           'Opening the Authentic Wellness consultation page now...';
         setTimeout(() => {
-          window.open('https://authenticwellness.com?ref=gym&program=' + encodeURIComponent(program), '_blank');
+          window.open('https://www.authenticwellness.com?ref=gym&program=' + encodeURIComponent(program), '_blank');
         }, 1000);
       } else {
         document.getElementById('success-title').textContent = 'Link Sent!';
