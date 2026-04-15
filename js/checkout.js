@@ -47,15 +47,16 @@
     const endpoint = cfg && cfg.createSessionEndpoint;
     if (!endpoint) {
       console.warn(
-        "[AW checkout] Set AW_STRIPE_PUBLIC.createSessionEndpoint (Worker URL). Falling back to Qualiphy.",
+        "[AW checkout] Set AW_STRIPE_PUBLIC.createSessionEndpoint (Worker URL). Checkout cannot start without it.",
       );
-      if (typeof window.showDisclosureModal === "function") {
-        window.showDisclosureModal();
-      }
+      alert(
+        "Online checkout is not configured on this preview. Please open the programs page or contact support.",
+      );
+      window.location.href = `${window.location.origin}/programs.html`;
       return;
     }
     const origin = window.location.origin;
-    const success_url = `${origin}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`;
+    const success_url = `${origin}/thank-you.html?session_id={CHECKOUT_SESSION_ID}`;
     const cancel_url = `${origin}/checkout-cancel.html`;
 
     const res = await fetch(endpoint, {
@@ -88,11 +89,10 @@
       const priceId = getPriceId(slug, billing, oneTime);
       if (!priceId || String(priceId).startsWith("price_PENDING")) {
         console.warn("[AW checkout] Missing Stripe price id for", slug, billing, oneTime);
-        if (typeof window.showDisclosureModal === "function") {
-          window.showDisclosureModal();
-        } else {
-          alert("Checkout is not fully configured yet. Please call the clinic.");
-        }
+        alert(
+          "This program is not available for online checkout yet. Please choose another program or contact support.",
+        );
+        window.location.href = `${window.location.origin}/programs.html`;
         return;
       }
 

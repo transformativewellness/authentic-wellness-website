@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2d4a3e">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Complete your Good Faith Exam | Authentic Wellness</title>
+  <meta name="description" content="Payment received. Complete your telehealth Good Faith Exam (GFE) to continue your Authentic Wellness program.">
+  <link rel="canonical" href="https://www.authenticwellness.com/thank-you.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="thank-you-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="thank-you-topbar" role="banner">
+    <div class="container thank-you-topbar-inner">
+      <a href="index.html" class="thank-you-logo" aria-label="Authentic Wellness home">
+        <img src="logo-dark.svg" width="180" height="42" alt="Authentic Wellness logo" decoding="async">
+      </a>
+      <a href="programs.html" class="thank-you-topbar-link">Browse programs</a>
+    </div>
+  </header>
+
+  <main id="main-content" class="thank-you-main section-linen">
+    <div class="container">
+      <section class="thank-you-hero">
+        <div class="thank-you-badge">Welcome to Authentic Wellness</div>
+        <h1>Your physician review is on its way.</h1>
+        <p class="thank-you-tagline">Optimized from the inside out.</p>
+
+        <div class="next-steps-card">
+          <h2>What happens next</h2>
+          <ol class="next-steps-list">
+            <li>
+              <strong>Check your email within 10 minutes.</strong>
+              You'll receive a secure link from our physician review partner to complete your Good Faith Exam (GFE) — a quick health history questionnaire that Dr. Joshua Yang, M.D. will personally review.
+            </li>
+            <li>
+              <strong>Complete your GFE in under 5 minutes.</strong>
+              Answer a few questions about your health history. Most reviews are approved the same day.
+            </li>
+            <li>
+              <strong>Your medication ships within 48 hours</strong> of approval from PATH Peptides, our 503B compounding pharmacy partner, direct to your door.
+            </li>
+            <li>
+              <strong>We check in at 1 week and 1 month</strong> to make sure your protocol is working and adjust as needed.
+            </li>
+          </ol>
+        </div>
+
+        <p class="support-note">
+          Questions? Email <a href="mailto:info@authenticwellness.com">info@authenticwellness.com</a> — we respond same-day.
+        </p>
+      </section>
+
+      <p id="aw-session-line" class="thank-you-session-ref" aria-live="polite"></p>
+
+      <p class="thank-you-back"><a href="programs.html">Back to programs</a> · <a href="contact.html">Contact support</a></p>
+    </div>
+  </main>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    (function () {
+      var N8N = "https://transformative.app.n8n.cloud/webhook/aw-checkout-complete";
+      var params = new URLSearchParams(window.location.search);
+      var sid = params.get("session_id");
+      var el = document.getElementById("aw-session-line");
+      if (el && sid) {
+        el.textContent = "Reference: checkout session recorded.";
+      }
+      if (!sid) return;
+      var key = "aw_n8n_checkout_complete_static:" + sid;
+      if (sessionStorage.getItem(key)) return;
+      fetch(N8N, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          stripe_session_id: sid,
+          source: "authentic_wellness_static",
+          timestamp: new Date().toISOString(),
+        }),
+      })
+        .then(function (r) {
+          if (r.ok) sessionStorage.setItem(key, "1");
+        })
+        .catch(function () {});
+    })();
+  </script>
+</body>
+</html>
