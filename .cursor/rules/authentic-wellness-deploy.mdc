@@ -1,0 +1,35 @@
+---
+description: Authentic Wellness repo identity, Cloudflare Worker deploy rules, and CI baseline — read before changing wrangler or GitHub Actions.
+alwaysApply: true
+---
+
+# Agent rules — authentic-wellness-website
+
+This repo deploys to the **Authentic Wellness** Cloudflare Workers account. Read this before touching deploy config.
+
+## Identity
+
+- **Repo:** `transformativewellness/authentic-wellness-website`
+- **Cloudflare account:** `info@transformativemedspa.com` (Authentic Wellness)
+- **Worker name:** `authentic-wellness`
+- **Production URL:** https://www.authenticwellness.com
+- **Sister repo (do not confuse):** `mckenziemeow/transformative-wellness-website` — different account, worker, and domain.
+
+## Rules
+
+1. **`wrangler.toml` is sacred.** Baseline known-good: commit `95572aa`. Worker `name` must be `authentic-wellness`; `[assets] directory` must point at a real folder in **this** repo. Never copy `wrangler.toml` from the TW repo.
+
+2. **Never rename the Worker.** Changing `name` creates a new Worker and orphans the `www.authenticwellness.com` route. If a rename seems needed, stop and ask the user.
+
+3. **Never change GitHub Actions secrets** from the agent. `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` belong to the `info@transformativemedspa.com` account. Do not point them at the TW account.
+
+4. **CI sanity check.** [`.github/workflows/cloudflare-deploy.yml`](.github/workflows/cloudflare-deploy.yml) includes **Validate wrangler.toml** (greps `name = "authentic-wellness"`, runs `wrangler deploy --dry-run`). If it fails, fix `wrangler.toml` (usually revert toward baseline); do not remove or weaken the check.
+
+5. **When in doubt, diff against `95572aa`** for `wrangler.toml` and the deploy workflow.
+
+## Deploy-critical paths (ask before editing unless the task is explicitly infra)
+
+- `wrangler.toml`
+- `.github/workflows/cloudflare-deploy.yml`
+- `_headers`, `_redirects`
+- Any file under `.github/`
