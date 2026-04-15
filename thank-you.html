@@ -29,47 +29,37 @@
 
   <main id="main-content" class="thank-you-main section-linen">
     <div class="container">
-      <p class="thank-you-banner">Payment received. One more step: your Good Faith Exam.</p>
+      <section class="thank-you-hero">
+        <div class="thank-you-badge">Welcome to Authentic Wellness</div>
+        <h1>Your physician review is on its way.</h1>
+        <p class="thank-you-tagline">Optimized from the inside out.</p>
 
-      <ol class="thank-you-stepper" aria-label="Enrollment progress">
-        <li class="thank-you-step thank-you-step--done"><span class="thank-you-step-icon" aria-hidden="true">&#10003;</span> Payment</li>
-        <li class="thank-you-step thank-you-step--current"><span class="thank-you-step-icon" aria-hidden="true">&#8594;</span> Good Faith Exam <span class="thank-you-step-now">(now)</span></li>
-        <li class="thank-you-step"><span class="thank-you-step-icon" aria-hidden="true">&#8987;</span> Physician approval</li>
-      </ol>
-
-      <p class="thank-you-lede">Complete your ~10-minute telehealth screening below. A licensed nurse practitioner will review your medical history. You&apos;ll also receive this link by email and text.</p>
-
-      <!-- TODO: replace iframe src with real Qualiphy AW white-label embed URL if different from app.qualiphy.me widget -->
-      <div class="aw-thankyou-gfe-wrap">
-        <iframe
-          id="aw-gfe-iframe"
-          class="aw-gfe-iframe"
-          title="Good Faith Exam — Qualiphy telehealth screening"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.app.qualiphy.me/qualiphy-widget?clinic=Authentic%20Wellness&amp;clinicId=6456&amp;first_name=&amp;last_name=&amp;email=&amp;phone_number=&amp;gender=&amp;exams=4194,4198,4199,4200,4202,4203,4204,4205,4207,2769,3702,2745,3703,4171,4172,4173,4174,1702,1008,1009,4106,4208,1904,1906,4226,1618,2488,2120,2316,2315,2129,1620,2121,2314,2130,1623,2248,4313,4334,2131,1690,2122,4314,4335,2565,2567,2755,2702,2861,2862,2863,2756,2864,2791,1900,3389,3388,4022,3538,116,2962,2247,3306,2075,3297,3298,3300,3299,3301,3302,3304,3305,3307,3308,3309,3310,3311,623,1486,1634,1808,1619,1621,1575,1640,3390,3990&amp;tele_state_required=true&amp;token=e97111808226681a2f307629007e908f0f719bd7"></iframe>
-      </div>
-
-      <p class="thank-you-fallback"><a id="aw-gfe-newtab" href="#" rel="noopener noreferrer" target="_blank">Having trouble? Open the GFE in a new tab.</a></p>
-      <p id="aw-session-line" class="thank-you-session-ref" aria-live="polite"></p>
-
-      <section class="thank-you-next" aria-labelledby="thank-you-next-heading">
-        <h2 id="thank-you-next-heading">What happens next</h2>
-        <div class="thank-you-next-grid">
-          <div class="thank-you-card">
-            <h3>Physician review</h3>
-            <p>After your screening, our medical director reviews your chart and confirms whether your program is appropriate.</p>
-          </div>
-          <div class="thank-you-card">
-            <h3>Medication prepared</h3>
-            <p>If approved, your prescription is sent to a licensed compounding pharmacy to prepare your medication.</p>
-          </div>
-          <div class="thank-you-card">
-            <h3>Ships via FedEx</h3>
-            <p>Most orders ship shortly after approval, with tracking sent to your email.</p>
-          </div>
+        <div class="next-steps-card">
+          <h2>What happens next</h2>
+          <ol class="next-steps-list">
+            <li>
+              <strong>Check your email within 10 minutes.</strong>
+              You'll receive a secure link from our physician review partner to complete your Good Faith Exam (GFE) — a quick health history questionnaire that Dr. Joshua Yang, M.D. will personally review.
+            </li>
+            <li>
+              <strong>Complete your GFE in under 5 minutes.</strong>
+              Answer a few questions about your health history. Most reviews are approved the same day.
+            </li>
+            <li>
+              <strong>Your medication ships within 48 hours</strong> of approval from PATH Peptides, our 503B compounding pharmacy partner, direct to your door.
+            </li>
+            <li>
+              <strong>We check in at 1 week and 1 month</strong> to make sure your protocol is working and adjust as needed.
+            </li>
+          </ol>
         </div>
+
+        <p class="support-note">
+          Questions? Email <a href="mailto:info@authenticwellness.com">info@authenticwellness.com</a> — we respond same-day.
+        </p>
       </section>
+
+      <p id="aw-session-line" class="thank-you-session-ref" aria-live="polite"></p>
 
       <p class="thank-you-back"><a href="programs.html">Back to programs</a> · <a href="contact.html">Contact support</a></p>
     </div>
@@ -77,13 +67,6 @@
 
   <script src="js/main.js" defer></script>
   <script>
-    (function () {
-      var iframe = document.getElementById("aw-gfe-iframe");
-      var fallback = document.getElementById("aw-gfe-newtab");
-      if (iframe && fallback) {
-        fallback.href = iframe.getAttribute("src") || "#";
-      }
-    })();
     (function () {
       var N8N = "https://transformative.app.n8n.cloud/webhook/aw-checkout-complete";
       var params = new URLSearchParams(window.location.search);

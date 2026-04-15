@@ -2249,3 +2249,117 @@ body.aw-cookie-visible:not(.aw-has-mobile-sticky-cta) {
     font-size: 1.15rem;
   }
 }
+
+.thank-you-hero {
+  max-width: 720px;
+  margin: 80px auto;
+  padding: 0 24px;
+  text-align: center;
+  font-family: inherit;
+}
+
+.thank-you-badge {
+  display: inline-block;
+  background: #d4a853;
+  color: #2d4a3e;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.thank-you-hero h1 {
+  color: #2d4a3e;
+  font-size: 42px;
+  line-height: 1.15;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.thank-you-tagline {
+  color: #7a9e8e;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0 0 48px 0;
+}
+
+.next-steps-card {
+  background: #f8f6f2;
+  border: 1px solid rgba(45, 74, 62, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.next-steps-card h2 {
+  color: #2d4a3e;
+  font-size: 22px;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.next-steps-list {
+  counter-reset: steps;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.next-steps-list li {
+  counter-increment: steps;
+  position: relative;
+  padding-left: 52px;
+  margin-bottom: 24px;
+  color: #2d4a3e;
+  line-height: 1.6;
+}
+
+.next-steps-list li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  background: #2d4a3e;
+  color: #d4a853;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.next-steps-list li:last-child { margin-bottom: 0; }
+
+.next-steps-list strong {
+  display: block;
+  font-weight: 600;
+  color: #2d4a3e;
+  margin-bottom: 4px;
+}
+
+.support-note {
+  color: #7a9e8e;
+  font-size: 15px;
+  margin-top: 24px;
+}
+
+.support-note a {
+  color: #2d4a3e;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .thank-you-hero { margin: 48px auto; }
+  .thank-you-hero h1 { font-size: 32px; }
+  .next-steps-card { padding: 28px 20px; }
+  .next-steps-list li { padding-left: 44px; }
+  .next-steps-list li::before { width: 32px; height: 32px; font-size: 14px; }
+}
