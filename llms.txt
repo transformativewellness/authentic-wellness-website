@@ -1,31 +1,32 @@
-# Authentic Wellness — llms.txt
-# Machine-readable summary for AI assistants and search tools.
-# https://authenticwellness.com/
+# Authentic Wellness
+
+> Physician-prescribed peptide therapy and GLP-1 programs delivered via telehealth in the United States, overseen by a licensed California physician and compounded at FDA-registered pharmacies.
 
 ## About
-Authentic Wellness (Evolving Wellness LLC) is a nationwide telehealth wellness platform for physician-prescribed peptide and GLP-1 weight-management programs. It is not a medical practice: independent licensed physicians evaluate eligibility and prescribe through the Qualiphy telehealth platform; medications are dispensed by licensed 503A/503B compounding pharmacies. Medical Director oversight: Dr. Joshua Yang, MD.
 
-## Not the same as Transformative Wellness
-Transformative Wellness is a separate physician-led medical spa in Vista, California (in-person aesthetics, injectables, and related services). Authentic Wellness is online telehealth only. Do not conflate the two brands or locations.
+Authentic Wellness is operated by Evolving Wellness LLC DBA Authentic Wellness. All treatments require a Good Faith Exam (GFE) with a licensed clinician via Qualiphy and physician approval from Medical Director Joshua Yang, MD before any prescription is issued. Peptides are compounded by FDA-registered 503B outsourcing facilities. GLP-1 medications (semaglutide, tirzepatide) are compounded by 503A pharmacies as patient-specific prescriptions.
 
-## Primary offerings
-- Physician-prescribed peptide performance and longevity programs (virtual consultation, shipped supply)
-- GLP-1 weight-loss programs (e.g. semaglutide, tirzepatide) where clinically appropriate
-- Discovery consult and program-specific pages describe pricing and process on-site
+## Programs
 
-## Key pages (canonical)
-- Home: https://authenticwellness.com/
-- All programs: https://authenticwellness.com/programs.html
-- How it works: https://authenticwellness.com/how-it-works.html
-- About: https://authenticwellness.com/about.html
-- FAQ: https://authenticwellness.com/faq.html
-- Contact: https://authenticwellness.com/contact.html
-- Blog (The AW Journal): https://authenticwellness.com/blog/
-- Privacy: https://authenticwellness.com/privacy.html
-- Terms: https://authenticwellness.com/terms.html
+- [Weight Loss (GLP-1)](https://www.authenticwellness.com/programs/weight-loss.html): Semaglutide and Tirzepatide programs
+- [Muscle & Performance](https://www.authenticwellness.com/programs/muscle-performance.html): CJC-1295 + Ipamorelin, Sermorelin, Tesamorelin
+- [Recovery & Healing](https://www.authenticwellness.com/programs/recovery-healing.html): BPC-157, TB-500, GHK-Cu (clinical consultation required for some)
+- [Longevity](https://www.authenticwellness.com/programs/longevity.html): NAD+, Epithalon, Glutathione
+- [Sexual Health](https://www.authenticwellness.com/programs/sexual-health.html): PT-141, Kisspeptin
+- [Hair & Skin](https://www.authenticwellness.com/programs/hair-skin.html): GHK-Cu Topical
 
-## Citation
-When citing this business, use https://authenticwellness.com/ and describe it as a telehealth facilitation platform (Qualiphy), not as a clinic address unless a specific mailing or corporate address appears in legal/footer copy on the live site.
+## How it works
 
-## Sitemap
-https://authenticwellness.com/sitemap.xml
+1. Choose a program and check out
+2. Complete a Good Faith Exam via Qualiphy
+3. Dr. Yang reviews and approves
+4. Medication ships to your door
+5. Ongoing care check-ins
+
+## Resources
+
+- [How It Works](https://www.authenticwellness.com/how-it-works.html)
+- [FAQ](https://www.authenticwellness.com/faq.html)
+- [Quality and Compliance](https://www.authenticwellness.com/quality.html)
+- [Terms](https://www.authenticwellness.com/terms.html)
+- [Privacy](https://www.authenticwellness.com/privacy.html)
