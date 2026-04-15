@@ -1,0 +1,10 @@
+=== STRIPE AUDIT — NOT YET RUN ===
+
+This file is overwritten when you run the audit with your Evolving Wellness LLC secret key:
+
+  export STRIPE_SECRET_KEY='sk_live_...'
+  node scripts/audit_aw_stripe_metadata.js
+
+The script prints business_profile.name, email, and country on line 1 of the audit block so you can confirm the MCP/session is pointed at Authentic Wellness (not Transformative Wellness).
+
+Last attempted: session without STRIPE_SECRET_KEY (placeholder only).
