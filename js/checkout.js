@@ -4,9 +4,17 @@
  *
  * Buttons:
  * - .aw-checkout[data-billing="monthly"|"quarterly"] — uses body[data-aw-product-slug] or data-product-slug
- * - .aw-checkout[data-checkout-one-time="1"] — Discovery; requires data-product-slug="discovery-consultation"
+ * - .aw-checkout[data-checkout-one-time="1"] — legacy one-time product slug (e.g. enrollment); requires data-product-slug
  */
 (function () {
+  /** Map legacy marketing slugs / old PDP keys to current Stripe config keys. */
+  const LEGACY_SLUG = {
+    perform: "cjc-ipamorelin",
+    renew: "sermorelin-injectable",
+    recovery: "bpc-157",
+    longevity: "nad-injectable",
+  };
+
   function getConfig() {
     return window.AW_STRIPE_PUBLIC;
   }
@@ -18,8 +26,14 @@
     return body.getAttribute("data-aw-product-slug") || "";
   }
 
+  function normalizeSlug(slug) {
+    if (!slug) return slug;
+    return LEGACY_SLUG[slug] || slug;
+  }
+
   function getPriceId(slug, billing, oneTime) {
     const cfg = getConfig();
+    slug = normalizeSlug(slug);
     if (!cfg || !cfg.prices || !slug) return null;
     const row = cfg.prices[slug];
     if (!row) return null;

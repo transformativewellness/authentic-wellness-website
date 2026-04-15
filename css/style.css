@@ -489,6 +489,131 @@ body.page-loaded .hero {
   font-weight: 600;
   margin-bottom: 1rem;
 }
+
+/* Compound-first category hub (Sage Mist eyebrow) */
+.program-category-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b8d4c8;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.category-hub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+@media (min-width: 640px) {
+  .category-hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .category-hub-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.category-hub-card {
+  background: #fff;
+  border: 1px solid #e2e0dc;
+  border-radius: 12px;
+  padding: 1.5rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.category-hub-card-title {
+  font-family: "DM Serif Display", "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  margin: 0;
+  color: #2d4a3e;
+  line-height: 1.25;
+}
+.category-hub-card-mech {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin: 0;
+  flex: 1;
+}
+.category-hub-card-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d4a3e;
+  margin: 0.25rem 0 0.5rem;
+}
+.pricing-dagger {
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 0.15rem;
+  color: #7a9e8e;
+}
+.pricing-dagger:hover {
+  text-decoration: underline;
+}
+.category-card-note {
+  font-size: 0.82rem;
+  color: #4a5568;
+  margin: 0.35rem 0 0;
+  line-height: 1.45;
+}
+.programs-category-hub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 640px) {
+  .programs-category-hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .programs-category-hub-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.programs-category-tile {
+  display: block;
+  background: #f8f6f2;
+  border: 1px solid #e2e0dc;
+  border-radius: 12px;
+  padding: 1.35rem 1.25rem;
+  text-align: left;
+  transition: transform 0.25s, box-shadow 0.25s;
+  color: inherit;
+}
+.programs-category-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(45, 74, 62, 0.1);
+}
+.programs-category-tile .program-category-eyebrow {
+  margin-bottom: 0.5rem;
+}
+.programs-category-tile h2 {
+  font-family: "DM Serif Display", "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  margin: 0 0 0.35rem;
+  color: #2d4a3e;
+}
+.programs-category-tile p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.45;
+}
+.text-muted {
+  color: #4a5568;
+}
+#pricing-disclosure {
+  scroll-margin-top: 5rem;
+}
 .program-price {
   font-size: 2rem;
   font-weight: 700;

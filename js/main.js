@@ -173,7 +173,7 @@ function initMobileStickyCta() {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-primary aw-mobile-sticky-cta-btn";
-    btn.textContent = "See if you qualify";
+    btn.textContent = "Get Started";
     btn.addEventListener("click", () => {
       if (typeof window.showDisclosureModal === "function") {
         window.showDisclosureModal();
