@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api
 
-Sitemap: https://authenticwellness.com/sitemap.xml
+Sitemap: https://www.authenticwellness.com/sitemap.xml
