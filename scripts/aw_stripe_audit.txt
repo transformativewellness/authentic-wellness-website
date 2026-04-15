@@ -1,10 +1,49 @@
-=== STRIPE AUDIT — NOT YET RUN ===
+=== Stripe account (verify this is Evolving Wellness LLC / AW, not TW) ===
+business_profile.name: Authentic Wellness Academy
+email: mckenzie@authenticwellness.com
+country: US
 
-This file is overwritten when you run the audit with your Evolving Wellness LLC secret key:
-
-  export STRIPE_SECRET_KEY='sk_live_...'
-  node scripts/audit_aw_stripe_metadata.js
-
-The script prints business_profile.name, email, and country on line 1 of the audit block so you can confirm the MCP/session is pointed at Authentic Wellness (not Transformative Wellness).
-
-Last attempted: session without STRIPE_SECRET_KEY (placeholder only).
+=== Products (43 unique by id, active+inactive) ===
+id=prod_UDSSAiY9xFG2C3 | name="AOD-9604 Program" | aw_category="weight_loss" | aw_compound="AOD-9604"
+id=prod_UDSSS6aNpgosuC | name="B12 injection program" | aw_category="longevity" | aw_compound="B12"
+id=prod_UDSSmOjyeSCNQo | name="BPC-157 + TB-500 Program" | aw_category="recovery_healing" | aw_compound="BPC-157 + TB-500"
+id=prod_UDSt7NNhYQ5rRB | name="BPC-157 Program" | aw_category="recovery_healing" | aw_compound="BPC-157"
+id=prod_UDSt4r3ltGYr9m | name="CJC-1295 + Ipamorelin Program" | aw_category="muscle_performance" | aw_compound="CJC-1295 + Ipamorelin"
+id=prod_UDSS9Z5Xj4gOPW | name="Dihexa Program" | aw_category="cognitive" | aw_compound="Dihexa"
+id=prod_UDSSvTh04UdVB9 | name="DSIP Program" | aw_category="longevity" | aw_compound="DSIP"
+id=prod_UDStjuuxsgpbEN | name="Epitalon Program" | aw_category="longevity" | aw_compound="Epitalon"
+id=prod_UDSS6KSwHTt8Nz | name="Follistatin Program" | aw_category="muscle_performance" | aw_compound="Follistatin"
+id=prod_UDSS6YKjg4BVLf | name="GHK-Cu + Epitalon Program" | aw_category="longevity" | aw_compound="GHK-Cu + Epitalon"
+id=prod_UDStGi2Z5KIn9y | name="GHK-Cu Program" | aw_category="recovery_healing" | aw_compound="GHK-Cu"
+id=prod_UDSSHsQxcLgNpd | name="Glutathione Program" | aw_category="longevity" | aw_compound="Glutathione"
+id=prod_UDSSCeQ4gGEPyX | name="Gonadorelin Program" | aw_category="sexual_health" | aw_compound="Gonadorelin"
+id=prod_Tja5ImHMt5N0DI | name="Intro to Neurotoxin" | aw_category="" | aw_compound="" | ** MISSING METADATA | TW SKU FLAG **
+id=prod_UDSS76L0YUqR4n | name="Ipamorelin + Sermorelin Program" | aw_category="muscle_performance" | aw_compound="Ipamorelin + Sermorelin"
+id=prod_UDSSrIMSW1z6kV | name="Kisspeptin Program" | aw_category="sexual_health" | aw_compound="Kisspeptin"
+id=prod_UDSS4KwQS9CEpF | name="KPV Program" | aw_category="recovery_healing" | aw_compound="KPV"
+id=prod_UDSufRSZB2QAVh | name="LDN Program" | aw_category="recovery_healing" | aw_compound="LDN"
+id=prod_UDSSH52UdaHdpV | name="LL-37 Program" | aw_category="recovery_healing" | aw_compound="LL-37"
+id=prod_UDSuM1tBoXPTJ1 | name="Mens hair loss program (oral)" | aw_category="hair_skin" | aw_compound="Minoxidil + finasteride"
+id=prod_UDSuJiyZPXhvCQ | name="Metformin Program" | aw_category="weight_loss" | aw_compound="Metformin"
+id=prod_UDSuoW0wYSUH1R | name="Methylene Blue Program" | aw_category="longevity" | aw_compound="Methylene Blue"
+id=prod_UDSuv0ZfugTsDN | name="MOTS-C Program" | aw_category="longevity" | aw_compound="MOTS-C"
+id=prod_UDSuk3K5pJvwxw | name="NAD+ Program" | aw_category="longevity" | aw_compound="NAD+"
+id=prod_UDSSAdqg003KpG | name="Ondansetron (supportive care)" | aw_category="weight_loss" | aw_compound="Ondansetron"
+id=prod_UECN37rcGfeCZL | name="Physician visit (program enrollment)" | aw_category="weight_loss" | aw_compound="Program enrollment"
+id=prod_UDSu6nJjDtMN5C | name="PT-141 Program" | aw_category="sexual_health" | aw_compound="PT-141"
+id=prod_UDStOHeFOkzCtL | name="Semaglutide Program - Maintenance" | aw_category="weight_loss" | aw_compound="Semaglutide"
+id=prod_UDSuYrinTWfxYl | name="Semaglutide Program - Mid dose" | aw_category="weight_loss" | aw_compound="Semaglutide"
+id=prod_UDSttfw0P5nCVV | name="Semaglutide Program - Starter" | aw_category="weight_loss" | aw_compound="Semaglutide"
+id=prod_UDSuJBE5dd62nh | name="Semax / Selank Program" | aw_category="cognitive" | aw_compound="Semax / Selank"
+id=prod_UDSSCtZZjUJbCq | name="Sermorelin Program" | aw_category="muscle_performance" | aw_compound="Sermorelin"
+id=prod_UDSSZJElhxofFW | name="Sildenafil Program" | aw_category="sexual_health" | aw_compound="Sildenafil"
+id=prod_UDSS9xvFYFtPul | name="SS-31 Program" | aw_category="longevity" | aw_compound="SS-31"
+id=prod_UDSuOMR6WlgD9C | name="Tadalafil Program" | aw_category="sexual_health" | aw_compound="Tadalafil"
+id=prod_UDSS4WruQrNosu | name="TB-500 Program" | aw_category="recovery_healing" | aw_compound="TB-500"
+id=prod_UDSSnwSRl7Avcx | name="Tesamorelin + Ipamorelin Program" | aw_category="muscle_performance" | aw_compound="Tesamorelin + Ipamorelin"
+id=prod_UDSu21kN7zbQlf | name="Tesamorelin Program" | aw_category="muscle_performance" | aw_compound="Tesamorelin"
+id=prod_UDSuyL8V1OZ8T3 | name="Thymosin Alpha-1 Program" | aw_category="recovery_healing" | aw_compound="Thymosin Alpha-1"
+id=prod_UDSSEvwB5x8JYs | name="Tirzepatide Program - High dose" | aw_category="weight_loss" | aw_compound="Tirzepatide"
+id=prod_UDSutCeiLsrjfi | name="Tirzepatide Program - Mid dose" | aw_category="weight_loss" | aw_compound="Tirzepatide"
+id=prod_UDSuVJcbdFElvV | name="Tirzepatide Program - Starter" | aw_category="weight_loss" | aw_compound="Tirzepatide"
+id=prod_UDSt8W1pv5HcRn | name="Womens hair loss program" | aw_category="hair_skin" | aw_compound="Minoxidil + spironolactone"
