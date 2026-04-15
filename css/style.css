@@ -719,6 +719,48 @@ body.page-loaded .hero {
   .steps-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* --- Hero / hub imagery --- */
+.hero-media-wrap {
+  margin: 1.5rem auto 0;
+  max-width: 920px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(45, 74, 62, 0.12);
+}
+.hero-media-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: min(52vh, 440px);
+}
+.program-hero-media,
+.category-hub-hero-media {
+  margin: 0 auto 1.25rem;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.program-hero-img,
+.category-hub-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 320px;
+}
+.programs-category-tile-thumb {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+.programs-category-tile-thumb img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
 /* --- Trust Bar --- */
 .trust-bar {
   background: #fff;
