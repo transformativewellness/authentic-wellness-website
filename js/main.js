@@ -143,8 +143,7 @@ window.addEventListener("load", () => {
 });
 
 /**
- * Fixed bottom CTA on small viewports — keeps primary conversion action one tap away after scroll.
- * Requires Qualiphy's showDisclosureModal (loaded before this runs on window load).
+ * Fixed bottom CTA on small viewports — routes to programs hub (checkout is Stripe-first, GFE after payment).
  */
 function initMobileStickyCta() {
   const mq = window.matchMedia("(max-width: 767px)");
@@ -154,8 +153,12 @@ function initMobileStickyCta() {
     document.body.classList.remove("aw-has-mobile-sticky-cta");
   }
 
+  function programsHubHref() {
+    const seg = window.location.pathname.split("/").filter(Boolean)[0];
+    return seg === "programs" || seg === "blog" ? "../programs.html" : "programs.html";
+  }
+
   function mountBar() {
-    if (typeof window.showDisclosureModal !== "function") return;
     if (document.getElementById("aw-mobile-sticky-cta")) {
       document.body.classList.add("aw-has-mobile-sticky-cta");
       return;
@@ -175,9 +178,7 @@ function initMobileStickyCta() {
     btn.className = "btn btn-primary aw-mobile-sticky-cta-btn";
     btn.textContent = "Get Started";
     btn.addEventListener("click", () => {
-      if (typeof window.showDisclosureModal === "function") {
-        window.showDisclosureModal();
-      }
+      window.location.href = programsHubHref();
     });
 
     const micro = document.createElement("p");
@@ -204,8 +205,9 @@ function initMobileStickyCta() {
   mq.addEventListener("change", apply);
 }
 
-/** Qualiphy disclosure: inject telehealth consent copy when modal mounts (script is external). */
+/** Qualiphy disclosure: inject telehealth consent copy when modal mounts (only if quidget script is on the page). */
 (function initQualiphyDisclosureEnhancements() {
+  if (!document.getElementById("qualiphy-script")) return;
   const telehealthHtml =
     "By proceeding, you consent to a virtual physician consultation via Qualiphy's secure telehealth platform. A licensed, independent physician will review your health history and determine if treatment is appropriate. Physician approval is required — this is not a guarantee of a prescription. You can access the full <a href=\"/terms.html\">Terms of Service</a> and <a href=\"/privacy.html\">Privacy Policy</a> below.";
 
