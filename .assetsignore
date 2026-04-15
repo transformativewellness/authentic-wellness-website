@@ -1,4 +1,16 @@
-# Dev / CI — not part of the public static site
-.github
-.wrangler
-scripts
+# Wrangler also ignores /_redirects and /_headers from the asset bundle (rules still apply).
+# Monorepo — Authentic Wellness static site is only files at repo root.
+/transformative-wellness-website/**
+/transformativemedspa-website/**
+/authentic-wellness-app/**
+
+/.git/**
+/.github/**
+/.cursor/**
+/.wrangler/**
+/.venv/**
+
+/assets/**
+/docs/**
+
+/scripts/**

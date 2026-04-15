@@ -1,15 +1,1 @@
-.DS_Store
-.venv/
-__pycache__/
-*.pyc
-.cursor/
-# Stripe API output (price IDs for GHL). Remove this line to commit the file.
-scripts/stripe-catalog-ids.json
-
-# wrangler files
-.wrangler
-.dev.vars*
-!.dev.vars.example
-.env*
-!.env.example
-!authentic-wellness-app/.env.production
+node_modules/

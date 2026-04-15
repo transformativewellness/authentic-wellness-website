@@ -1,0 +1,14 @@
+{
+  "name": "authentic-wellness-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync-stripe": "node scripts/sync-stripe.js",
+    "emit-catalog": "node scripts/emit-catalog-ts.mjs",
+    "generate-stripe-config": "node scripts/generate-stripe-client-config.mjs",
+    "post-stripe-sync": "node scripts/emit-catalog-ts.mjs && node scripts/generate-stripe-client-config.mjs"
+  },
+  "dependencies": {
+    "stripe": "^17.7.0"
+  }
+}

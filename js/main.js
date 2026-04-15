@@ -1,3 +1,28 @@
+/**
+ * GA4 event when Ageless AI links are clicked (fires only if gtag is loaded).
+ * Load GA separately; do not add TW-style global analytics bundles here.
+ */
+function trackAgelessClick(pageLocation, ctaPosition) {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", "ageless_ai_click", {
+    page_location: pageLocation,
+    cta_position: ctaPosition,
+    link_type: "ageless_ai",
+  });
+}
+
+document.addEventListener(
+  "click",
+  (e) => {
+    const a = e.target.closest("a[data-ageless-track]");
+    if (!a) return;
+    const page = a.getAttribute("data-ageless-page") || window.location.pathname;
+    const pos = a.getAttribute("data-ageless-position") || "unknown";
+    trackAgelessClick(page, pos);
+  },
+  true
+);
+
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 const navInner = document.querySelector(".nav-inner");
@@ -147,8 +172,8 @@ function initMobileStickyCta() {
 
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "btn btn-amber aw-mobile-sticky-cta-btn";
-    btn.textContent = "Start my program";
+    btn.className = "btn btn-primary aw-mobile-sticky-cta-btn";
+    btn.textContent = "See if you qualify";
     btn.addEventListener("click", () => {
       if (typeof window.showDisclosureModal === "function") {
         window.showDisclosureModal();
@@ -158,7 +183,7 @@ function initMobileStickyCta() {
     const micro = document.createElement("p");
     micro.className = "aw-mobile-sticky-cta-micro";
     micro.textContent =
-      "Full medication refund if not approved by your physician. Consultation fee is non-refundable.";
+      "Not approved for medication? Medication fees refunded. Consultation fees are non-refundable.";
 
     inner.appendChild(btn);
     inner.appendChild(micro);
@@ -205,16 +230,42 @@ function initMobileStickyCta() {
   function enhanceInnerModel(inner) {
     if (!inner || inner.dataset.awTelehealthEnhanced) return;
     inner.dataset.awTelehealthEnhanced = "1";
+    const heading = inner.querySelector("h2, h3");
+    const btn = inner.querySelector("button");
     const p = document.createElement("p");
     p.className = "aw-disclosure-telehealth compliance-disclaimer";
     p.innerHTML = telehealthHtml;
     prefixTermsPrivacyLinks(p);
-    inner.insertBefore(p, inner.firstChild);
+    if (heading) {
+      inner.insertBefore(heading, inner.firstChild);
+      heading.insertAdjacentElement("afterend", p);
+    } else {
+      inner.insertBefore(p, inner.firstChild);
+    }
+    if (btn) {
+      inner.appendChild(btn);
+    }
+  }
+
+  /** Qualiphy modal sometimes includes a generic "here" link — expand for SEO / a11y. */
+  function improveQualiphyLinkText(inner) {
+    if (!inner) return;
+    inner.querySelectorAll("a[href*='qualiphy']").forEach((a) => {
+      if ((a.textContent || "").trim().toLowerCase() !== "here") return;
+      a.textContent = "Qualiphy telehealth consent terms";
+      if (!a.getAttribute("target")) {
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener noreferrer");
+      }
+    });
   }
 
   const obs = new MutationObserver(() => {
     const inner = document.querySelector("#inner-model");
-    if (inner) enhanceInnerModel(inner);
+    if (inner) {
+      enhanceInnerModel(inner);
+      improveQualiphyLinkText(inner);
+    }
   });
   obs.observe(document.documentElement, { childList: true, subtree: true });
 })();

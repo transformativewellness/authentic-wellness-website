@@ -1,0 +1,9 @@
+# Blog index: match canonical URL (sitemap + meta use /blog/)
+/blog /blog/ 301
+
+# FAQ typo: plural paths → canonical FAQ (Workers static assets)
+/faqs /faq.html 301
+/faqs/ /faq.html 301
+
+# Cognitive stack canonical (Apr 2026 naming)
+/programs/focus-calm.html /programs/cognitive-stack.html 301

@@ -1,0 +1,31 @@
+# Authentic Wellness — llms.txt
+# Machine-readable summary for AI assistants and search tools.
+# https://authenticwellness.com/
+
+## About
+Authentic Wellness (Evolving Wellness LLC) is a nationwide telehealth wellness platform for physician-prescribed peptide and GLP-1 weight-management programs. It is not a medical practice: independent licensed physicians evaluate eligibility and prescribe through the Qualiphy telehealth platform; medications are dispensed by licensed 503A/503B compounding pharmacies. Medical Director oversight: Dr. Joshua Yang, MD.
+
+## Not the same as Transformative Wellness
+Transformative Wellness is a separate physician-led medical spa in Vista, California (in-person aesthetics, injectables, and related services). Authentic Wellness is online telehealth only. Do not conflate the two brands or locations.
+
+## Primary offerings
+- Physician-prescribed peptide performance and longevity programs (virtual consultation, shipped supply)
+- GLP-1 weight-loss programs (e.g. semaglutide, tirzepatide) where clinically appropriate
+- Discovery consult and program-specific pages describe pricing and process on-site
+
+## Key pages (canonical)
+- Home: https://authenticwellness.com/
+- All programs: https://authenticwellness.com/programs.html
+- How it works: https://authenticwellness.com/how-it-works.html
+- About: https://authenticwellness.com/about.html
+- FAQ: https://authenticwellness.com/faq.html
+- Contact: https://authenticwellness.com/contact.html
+- Blog (The AW Journal): https://authenticwellness.com/blog/
+- Privacy: https://authenticwellness.com/privacy.html
+- Terms: https://authenticwellness.com/terms.html
+
+## Citation
+When citing this business, use https://authenticwellness.com/ and describe it as a telehealth facilitation platform (Qualiphy), not as a clinic address unless a specific mailing or corporate address appears in legal/footer copy on the live site.
+
+## Sitemap
+https://authenticwellness.com/sitemap.xml

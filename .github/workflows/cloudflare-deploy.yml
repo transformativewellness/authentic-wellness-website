@@ -1,9 +1,15 @@
 # Deploy static site to Cloudflare Workers (Static Assets)
 # Replaces the old Pages-based deploy that was returning "Unauthorized"
 #
+# Repository: https://github.com/mckenziemeow/transformative-wellness-website
+#
 # Required GitHub repo secrets:
-#   CLOUDFLARE_API_TOKEN — API Token with "Workers Scripts: Edit" permission
-#   CLOUDFLARE_ACCOUNT_ID — Cloudflare account ID (set in repo secrets only; never commit)
+#   CLOUDFLARE_API_TOKEN — Create while logged into Cloudflare as mckenzie@transformativemedspa.com
+#     (Transformative Med Spa / transformativemedspa.com). Do NOT use a token from the
+#     Authentic Wellness account (authenticwellness.com / info@authenticwellness.com).
+#     Permission: Workers Scripts: Edit (or template "Edit Cloudflare Workers").
+#   CLOUDFLARE_ACCOUNT_ID — Account ID from that same Transformative dashboard
+#     (any zone → Overview → Account ID). Must match the mckenzie@transformativemedspa.com org.
 #
 # Production URL: https://authentic-wellness.<your-subdomain>.workers.dev
 # Custom domain: Cloudflare dashboard → Workers & Pages → authentic-wellness → Settings → Domains & Routes

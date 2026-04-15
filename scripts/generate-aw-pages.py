@@ -72,6 +72,7 @@ def nav_sub() -> str:
         <a href="../how-it-works.html">How It Works</a>
         <a href="../about.html">About</a>
         <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
         <div class="nav-cta">
           <a href="../how-it-works.html#start" class="btn btn-primary" style="padding:0.625rem 1.5rem;font-size:0.85rem;">See If You Qualify</a>
           <p class="cta-microcopy">Full refund if not approved by your physician.</p>
@@ -140,6 +141,7 @@ def nav_root_explicit() -> str:
         <a href="how-it-works.html">How It Works</a>
         <a href="about.html">About</a>
         <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
         <div class="nav-cta">
           <a href="how-it-works.html#start" class="btn btn-primary" style="padding:0.625rem 1.5rem;font-size:0.85rem;">See If You Qualify</a>
           <p class="cta-microcopy">Full refund if not approved by your physician.</p>
@@ -164,7 +166,7 @@ def footer_sub() -> str:
           <p style="margin-top:0.75rem;">info@authenticwellness.com</p>
         </div>
         <div>
-          <h4>Programs</h4>
+          <p class="footer-col-title">Programs</p>
           <p class="compliance-disclaimer" style="margin-bottom:0.75rem;">Compounded medications are not FDA-approved. Prepared by licensed 503A/503B pharmacies.</p>
           <div class="footer-links">
             <a href="perform.html">Perform Program</a>
@@ -173,7 +175,7 @@ def footer_sub() -> str:
           </div>
         </div>
         <div>
-          <h4>Company</h4>
+          <p class="footer-col-title">Company</p>
           <div class="footer-links">
             <a href="../how-it-works.html">How It Works</a>
             <a href="../about.html">About</a>
@@ -182,7 +184,7 @@ def footer_sub() -> str:
           </div>
         </div>
         <div>
-          <h4>Legal</h4>
+          <p class="footer-col-title">Legal</p>
           <div class="footer-links">
             <a href="../privacy.html">Privacy Policy</a>
             <a href="../terms.html">Terms of Service</a>
@@ -231,7 +233,7 @@ def footer_root_explicit() -> str:
           <p style="margin-top:0.75rem;">info@authenticwellness.com</p>
         </div>
         <div>
-          <h4>Programs</h4>
+          <p class="footer-col-title">Programs</p>
           <p class="compliance-disclaimer" style="margin-bottom:0.75rem;">Compounded medications are not FDA-approved. Prepared by licensed 503A/503B pharmacies.</p>
           <div class="footer-links">
             <a href="programs/perform.html">Perform Program</a>
@@ -240,16 +242,17 @@ def footer_root_explicit() -> str:
           </div>
         </div>
         <div>
-          <h4>Company</h4>
+          <p class="footer-col-title">Company</p>
           <div class="footer-links">
             <a href="how-it-works.html">How It Works</a>
             <a href="about.html">About</a>
             <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
             <a href="blog/index.html">Blog</a>
           </div>
         </div>
         <div>
-          <h4>Legal</h4>
+          <p class="footer-col-title">Legal</p>
           <div class="footer-links">
             <a href="privacy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>

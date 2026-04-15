@@ -1,8 +1,23 @@
-# Cloudflare Workers Static Assets — deploy from repo root
-# This replaces the deprecated Cloudflare Pages approach.
+# Cloudflare Workers Static Assets — transformativemedspa.com site bundle
 # Docs: https://developers.cloudflare.com/workers/static-assets/
-name = "authentic-wellness"
+#
+# ACCOUNT (critical): Deploy from the Cloudflare account for Transformative Med Spa —
+# log in as mckenzie@transformativemedspa.com (the account that owns transformativemedspa.com).
+# Do NOT use wrangler login / API tokens from the Authentic Wellness Cloudflare account
+# (authenticwellness.com / info@authenticwellness.com); that will deploy to the wrong account.
+#
+# Local: `wrangler logout` then `wrangler login` and choose the Transformative account.
+# Optional: set `account_id` below (Workers & Pages → Overview → Account ID) to force the right org.
+# account_id = "paste-transformative-account-id-here"
+#
+# .wranglerignore patterns apply relative to [assets].directory (not repo root).
+# Do not set directory = "." unless you intend to ship the whole monorepo (e.g. .venv-img).
+name = "transformative-wellness"
 compatibility_date = "2026-03-28"
+main = "worker.js"
 
+# Run Worker on every request so http:// traffic hits the 301 before assets.
 [assets]
-directory = "."
+directory = "transformativemedspa-website"
+binding = "ASSETS"
+run_worker_first = true
