@@ -65,10 +65,35 @@
       <p class="program-page-tagline">Calm-focus peptide protocol — physician-prescribed when appropriate.</p>
       <div class="program-badge-row"><span class="program-pill program-pill--save">Save 10% quarterly</span></div>
       <div class="price-badge-amber">$149/mo · $134/mo with quarterly</div>
-      <a href="../contact.html?reason=clinical_consultation" class="btn btn-primary program-page-cta">Clinical Consultation Required</a>
+      <button type="button" class="btn btn-primary program-page-cta" data-aw-waitlist-toggle>Get Started</button>
       <p class="cta-microcopy program-page-hero-micro">Your licensed physician determines if this program is appropriate for you. Not approved for medication? Medication fees refunded. Consultation fees are non-refundable.</p>
     </div>
   </header>
+  <section id="aw-program-waitlist" class="section-linen aw-program-waitlist-section" hidden>
+    <div class="container aw-program-waitlist-inner">
+      <div class="aw-program-waitlist-form-card">
+        <h2 class="aw-program-waitlist-heading">Get started</h2>
+        <p class="aw-program-waitlist-lead">Online checkout for this program is not live yet. Share your name and email and we&apos;ll notify you when enrollment opens here.</p>
+        <div id="aw-waitlist-status" class="form-status" role="status" aria-live="polite" hidden></div>
+        <form id="aw-program-waitlist-form" class="aw-program-waitlist-form contact-form" novalidate>
+          <input type="hidden" name="program_slug" value="selank">
+          <div class="form-group">
+            <label for="aw-wl-name">Name <span class="contact-required-mark">*</span></label>
+            <input id="aw-wl-name" name="full_name" type="text" required autocomplete="name" maxlength="120">
+          </div>
+          <div class="form-group">
+            <label for="aw-wl-email">Email <span class="contact-required-mark">*</span></label>
+            <input id="aw-wl-email" name="email" type="email" required autocomplete="email" maxlength="254" inputmode="email">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="aw-program-waitlist-thanks" class="aw-program-waitlist-thanks" hidden>
+          <p><strong>Thank you</strong> &mdash; we&apos;ll email you when this program is available for online checkout.</p>
+          <p class="aw-program-waitlist-thanks-note">Questions? <a href="mailto:info@authenticwellness.com">info@authenticwellness.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section-linen">
     <div class="container program-page-section">
       <h2>About this program</h2>
@@ -122,6 +147,8 @@
       <button type="button" id="cookie-dismiss" class="cookie-btn">Accept</button>
     </div>
   </div>
+  <script src="../js/waitlist-config.js" defer></script>
+  <script src="../js/program-waitlist.js" defer></script>
   <script src="../js/main.js" defer></script>
 </body>
 </html>
