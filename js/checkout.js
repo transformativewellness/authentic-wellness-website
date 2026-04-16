@@ -49,10 +49,7 @@
       console.warn(
         "[AW checkout] Set AW_STRIPE_PUBLIC.createSessionEndpoint (Worker URL). Checkout cannot start without it.",
       );
-      alert(
-        "Online checkout is not configured on this preview. Please open the programs page or contact support.",
-      );
-      window.location.href = `${window.location.origin}/programs.html`;
+      window.location.href = `${window.location.origin}/contact.html?reason=checkout_not_configured`;
       return;
     }
     const origin = window.location.origin;
@@ -67,7 +64,7 @@
     const data = await res.json().catch(() => ({}));
     if (!res.ok) {
       console.error("[AW checkout]", data.error || res.status);
-      alert(data.error || "Checkout could not start. Please try again or contact support.");
+      window.location.href = `${window.location.origin}/contact.html?reason=checkout_session_error`;
       return;
     }
     if (data.url) {
@@ -89,10 +86,8 @@
       const priceId = getPriceId(slug, billing, oneTime);
       if (!priceId || String(priceId).startsWith("price_PENDING")) {
         console.warn("[AW checkout] Missing Stripe price id for", slug, billing, oneTime);
-        alert(
-          "This program is not available for online checkout yet. Please choose another program or contact support.",
-        );
-        window.location.href = `${window.location.origin}/programs.html`;
+        var q = new URLSearchParams({ reason: "no_price", program: slug || "" });
+        window.location.href = `${window.location.origin}/contact.html?${q.toString()}`;
         return;
       }
 
