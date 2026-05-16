@@ -1,0 +1,26 @@
+# gitleaks config — Authentic Wellness website
+# Added 2026-05-16 after the AI-Era Security Hardening Plan gitleaks scan.
+# Extends gitleaks' default ruleset, then allowlists findings reviewed and
+# confirmed benign. Real secrets are still caught — these entries are scoped
+# tightly to the specific false positives, not blanket rule-disables.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Reviewed-benign findings — AW marketing site (gitleaks scan 2026-05-16, Quill)"
+
+# Historical: authentic-wellness-app/.env.production held only the PUBLIC
+# Supabase anon key (publishable, ships in the browser bundle by design).
+# Untracked from git 2026-05-16; remains in history. Not a secret leak.
+paths = [
+  '''authentic-wellness-app/\.env\.production''',
+]
+
+# Site-wide client-side embed token in each page's <head> (token=...).
+# It is served in HTML to every visitor — public by design, not a server
+# secret. gitleaks flags it as generic-api-key on entropy alone.
+regexTarget = "match"
+regexes = [
+  '''token=[A-Za-z0-9._=/+-]{8,}''',
+]
