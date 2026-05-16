@@ -1,1 +1,7 @@
 node_modules/
+
+# Environment / secret files — never commit (added 2026-05-16, gitleaks scan)
+.env
+.env.*
+!.env.example
+!.env.*.example
